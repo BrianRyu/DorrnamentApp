@@ -1,0 +1,6 @@
+<h1>Tournaments</h1>
+<ul>
+<% @tournaments.each do |tournament| %>
+<li><%= link_to tournament.name, tournament %> on <%= tournament.date %> at <%= link_to tournament.venue.name, tournament.venue %></li>
+<% end %>
+</ul>

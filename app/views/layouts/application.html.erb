@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DorrnamentApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <table>
+      <tr> 
+        <th><%= link_to "All Venues", "/venues" %></th>
+        <th><%= link_to "New Venues", "/venues/new" %></th>
+        <th><%= link_to "All Tournaments", "/tournaments" %></th>
+      </tr>
+    </table>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
