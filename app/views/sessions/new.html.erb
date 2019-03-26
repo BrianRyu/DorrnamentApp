@@ -1,0 +1,9 @@
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <label for="">Name: </label>
+  <input name=name> <br>
+  <label for="">Password: </label>
+  <input type="password" name="password" value=""> <br>
+  <label for="">Confirm Password: </label>
+  <input type="password" name="password_confirmation" value=""> <br>
+  <input type=submit value='login'>
+<% end %>
