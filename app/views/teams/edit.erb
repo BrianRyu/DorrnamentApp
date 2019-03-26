@@ -1,0 +1,11 @@
+<h1> Team <%= @team.name %> </h1>
+
+<h3> Edit Team </h3>
+
+<%= form_for @team do |f| %>
+Team Name : <%= f.text_field :name %><br>
+<br>
+<%= f.submit "Edit"%>
+<% end  %>
+
+<%= link_to 'Remove Team', team_path(@team), :confirm => 'Are you sure?', :method => :destroy %>

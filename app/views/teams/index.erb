@@ -2,7 +2,11 @@
 
 <ul>
     <% @teams.each do |team| %>
-        <li> <%= link_to team.name, team %> </li>
+        <li> <%= link_to team.name, team %> </li><br>
     <% end %>
 </ul>
 
+<%= link_to "Create Your Team Here!", new_team_path %>
+
+
+     

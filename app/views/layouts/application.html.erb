@@ -12,11 +12,16 @@
         <th><%= link_to "All Venues", "/venues" %></th>
         <th><%= link_to "New Venues", "/venues/new" %></th>
         <th><%= link_to "All Tournaments", "/tournaments" %></th>
+        <th><%= link_to "Teams", teams_path %></th>
+        <th><%= link_to "Players", players_path %></th>
+
       </tr>
     </table>
   </head>
 
   <body>
+
+  
     <%= yield %>
   </body>
 </html>

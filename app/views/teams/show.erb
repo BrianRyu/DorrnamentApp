@@ -1,8 +1,11 @@
+
 <h1> Team <%= @team.name %> </h1>
 
 Players:
 <ul>
     <% @team.players.each do |player| %>
-        <li> <%= player %> </li>
+        <li> <%= link_to player.name, player_path(player.id) %> </li>
     <% end %>
 </ul>
+
+<%= link_to "Edit Your Team", edit_team_path %>
