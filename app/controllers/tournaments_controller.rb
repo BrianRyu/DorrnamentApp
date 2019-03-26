@@ -31,6 +31,21 @@ class TournamentsController < ApplicationController
       redirect_to tournaments_path
     end
 
+    def edit
+      @tournament = Tournament.find(params[:id])
+      @venues = Venue.all.sort_by(&:name)
+    end
+
+    def update
+      @tournament = Tournament.find(params[:id])
+      @tournament.update(tournament_params)
+      if @tournament.save
+          redirect_to @tournament
+      else
+          render :new
+      end
+    end
+
     private
 
     def tournament_params

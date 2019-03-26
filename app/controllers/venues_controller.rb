@@ -28,6 +28,20 @@ class VenuesController < ApplicationController
       redirect_to venues_path
     end
 
+    def edit
+      @venue = Venue.find(params[:id])
+    end
+
+    def update
+      @venue = Venue.find(params[:id])
+      @venue.update(venue_params)
+      if @venue.save
+          redirect_to @venue
+      else
+          render :new
+      end
+    end
+
     private
 
     def venue_params
