@@ -1,29 +1,31 @@
 class TournamentsController < ApplicationController
 
-    def index 
-        @tournaments = Tournament.all
-    end 
+    def index
+        @tournaments = Tournament.all.sort_by {|t| t.date}
+    end
 
-    def show 
+    def show
         @tournament = Tournament.find(params[:id])
-    end 
-    
-    def new 
-        @tournament = Tournament.new
-    end 
+        @teams = Team.all.sort_by {|t| t.name}
+        @team = Team.new
+    end
 
-    def create 
+    def new
+        @tournament = Tournament.new
+    end
+
+    def create
         @tournament = Tournament.create(tournament_params)
-        if @tournament.save 
+        if @tournament.save
             redirect_to @tournament
         else
-            render :new 
+            render :new
         end
     end
 
-    private 
+    private
 
-    def tournament_params 
+    def tournament_params
         params.require(:tournament).permit(:name, :location)
     end
 
