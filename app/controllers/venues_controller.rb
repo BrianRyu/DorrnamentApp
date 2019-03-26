@@ -1,29 +1,29 @@
 class VenuesController < ApplicationController
 
-    def index 
-        @venues = Venue.all
-    end 
+    def index
+        @venues = Venue.all.sort_by {|v| v.name}
+    end
 
-    def show 
+    def show
         @venue = Venue.find(params[:id])
-    end 
-    
-    def new 
-        @venue = Venue.new
-    end 
+    end
 
-    def create 
+    def new
+        @venue = Venue.new
+    end
+
+    def create
         @venue = Venue.create(venue_params)
-        if @venue.save 
+        if @venue.save
             redirect_to @venue
         else
-            render :new 
+            render :new
         end
     end
 
-    private 
+    private
 
-    def venue_params 
+    def venue_params
         params.require(:venue).permit(:name, :location)
     end
 end
