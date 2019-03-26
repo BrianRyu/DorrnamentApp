@@ -9,3 +9,5 @@ Team Name : <%= f.text_field :name %><br>
 <% end  %>
 
 <%= link_to 'Remove Team', team_path(@team), :confirm => 'Are you sure?', :method => :destroy %>
+<%= button_to "Delete Team", {:controller => :teams,
+  :action => 'destroy', :id => @team.id}, :method => :delete, data: {confirm: "This will delete the team. Are you sure?"} %>
