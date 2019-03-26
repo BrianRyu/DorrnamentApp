@@ -2,6 +2,18 @@
 <p><%= @tournament.date %></p>
 <p><%= link_to @tournament.venue.name, @tournament.venue %></p>
 
+<h3>Current Teams</h3>
+<ul>
+  <% @tournament.teams.each do |team| %>
+  <li><%= team.name %></li>
+  <ul>
+    <% team.players.each do |player| %>
+    <li><%= player.name %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</ul>
+
 <label>Team Sign Up / Create: </label>
 <input type="text" list="combo-options" id="combobox">
 <datalist id="combo-options">
