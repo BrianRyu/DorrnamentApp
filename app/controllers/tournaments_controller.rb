@@ -46,6 +46,9 @@ class TournamentsController < ApplicationController
       end
     end
 
+    def analytics
+    end
+
     private
 
     def tournament_params
