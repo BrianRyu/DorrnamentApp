@@ -1,4 +1,6 @@
 class VenuesController < ApplicationController
+  before_action :require_login
+  skip_before_action :require_login, only: [:index, :show]
 
     def index
         @venues = Venue.all.sort_by {|v| v.name}
@@ -47,4 +49,5 @@ class VenuesController < ApplicationController
     def venue_params
         params.require(:venue).permit(:name, :location)
     end
+    
 end
