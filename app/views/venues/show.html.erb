@@ -6,3 +6,6 @@
   <li><%= tournament.date %> - <%= link_to tournament.name, tournament %></li>
   <% end %>
 </ul>
+
+<%= button_to "Edit Venue", {:controller => :venues,
+  :action => 'edit', :id => @venue.id}, :method => :get %>
