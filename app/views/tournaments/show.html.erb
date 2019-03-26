@@ -37,6 +37,5 @@
 <%= error %>
 <% end %>
 
-<%= button_to "Delete Tournament", {:controller => :tournaments,
-  :action => 'destroy', :id => @tournament.id}, :method => :delete,
-  data: {confirm: "This will delete the tournament and all entries. Are you sure?"} %>
+<%= button_to "Edit Tournament", {:controller => :tournaments,
+  :action => 'edit', :id => @tournament.id}, :method => :get %>

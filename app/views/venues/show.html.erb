@@ -7,5 +7,5 @@
   <% end %>
 </ul>
 
-<%= button_to "Delete Venue", {:controller => :venues,
-  :action => 'destroy', :id => @venue.id}, :method => :delete, data: {confirm: "This will delete the venue. Are you sure?"} %>
+<%= button_to "Edit Venue", {:controller => :venues,
+  :action => 'edit', :id => @venue.id}, :method => :get %>
