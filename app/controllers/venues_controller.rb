@@ -6,6 +6,7 @@ class VenuesController < ApplicationController
 
     def show
         @venue = Venue.find(params[:id])
+        @tournaments = @venue.tournaments.sort_by(&:date)
     end
 
     def new

@@ -4,4 +4,6 @@ class Team < ApplicationRecord
     has_many :tournaments, through: :entries
     has_many :players, through: :drafts
     has_many :venues, through: :tournaments
+
+    validates :name, presence: true
 end
