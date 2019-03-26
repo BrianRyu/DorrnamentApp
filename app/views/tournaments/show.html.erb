@@ -7,17 +7,35 @@
   <% @tournament.teams.each do |team| %>
   <li><%= team.name %></li>
   <ul>
-    <% team.players.each do |player| %>
+    <% team.players.sort_by(&:name).each do |player| %>
     <li><%= player.name %></li>
     <% end %>
   </ul>
   <% end %>
 </ul>
 
-<label>Team Sign Up / Create: </label>
-<input type="text" list="combo-options" id="combobox">
-<datalist id="combo-options">
-  <% @teams.each do |team| %>
-    <option name="<%= team.id %>"><%= team.name %></option>
-  <% end %>
-</datalist>
+<%= form_for @entry do |f| %>
+<%= f.label :team %>
+<%= f.text_field :team %>
+<%= hidden_field_tag 'tournament_id', "#{params[:id]}" %>
+<%= f.submit %>
+<% end %>
+
+<!-- <label>Team Sign Up / Create: </label>
+<form class="" action="/entries" method="post">
+  <input type="text" list="combo-options" id="combobox">
+  <datalist id="combo-options">
+    <%# (@teams - @tournament.teams).each do |team| %>
+    <option name="<%# team %>"><%# team.name %></option>
+    <%# end %>
+  </datalist>
+  <input type="submit" name="" value="Enter Now!">
+</form> -->
+
+<% @entry.errors.full_messages.each do |error| %>
+<%= error %>
+<% end %>
+
+<%= link_to 'DELETE',url_for(action: :destroy,
+id: @tournament.id), method: :delete,
+data: {confirm: "This will delete the tournament and all entries. Are you sure?"} %>

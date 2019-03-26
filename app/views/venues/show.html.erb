@@ -1,2 +1,8 @@
 <h1> <%= @venue.name %> </h1>
 <p><%= @venue.location %></p>
+<h5>Upcoming Tournaments</h5>
+<ul>
+  <% @tournaments.each do |tournament| %>
+  <li><%= tournament.date %> - <%= link_to tournament.name, tournament %></li>
+  <% end %>
+</ul>

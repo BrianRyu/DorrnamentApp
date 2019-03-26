@@ -4,3 +4,4 @@
 <li><%= tournament.date %> - <%= link_to tournament.name, tournament %> at <%= link_to tournament.venue.name, tournament.venue %></li>
 <% end %>
 </ul>
+<%= link_to "New Tournament", new_tournament_path %>

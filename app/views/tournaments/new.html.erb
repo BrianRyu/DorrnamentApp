@@ -1,8 +1,13 @@
-<h1>Create Venue</h1>
-<%= form_for @venue do |f| %>
+<h1>Create Tournament</h1>
+<%= form_for @tournament do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
-<%= f.label :location %>
-<%= f.text_field :location %>
+<%= f.label :date %>
+<%= f.date_field :date %>
+<%= f.label :venue %>
+<%= f.collection_select :venue_id, @venues, :id, :name %>
 <%= f.submit %>
+<% end %>
+<% @tournament.errors.full_messages.each do |error| %>
+<%= error %>
 <% end %>
