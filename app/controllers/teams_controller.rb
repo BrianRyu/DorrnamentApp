@@ -40,4 +40,5 @@ class TeamsController < ApplicationController
     def find_team
         @team = Team.find(params[:id])
     end 
+
 end
