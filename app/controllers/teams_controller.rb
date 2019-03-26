@@ -27,6 +27,8 @@ class TeamsController < ApplicationController
     end 
 
     def destroy 
+        @team.drafts.destroy_all
+        @team.entries.destroy_all
         @team.destroy
         redirect_to teams_path
     end 

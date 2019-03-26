@@ -4,5 +4,7 @@
 <%= form_for @team do |f| %>
 Team Name : <%= f.text_field :name %><br>
 <br>
-<%= f.submit "Create"%>
+<%= f.submit "Submit Create"%>
 <% end  %>
+<br>
+<%= button_to "Back To All Teams", {:controller => :teams, :action => 'index', :id => @team.id}, :method => :get %>

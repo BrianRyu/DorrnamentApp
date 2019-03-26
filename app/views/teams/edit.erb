@@ -5,7 +5,7 @@
 <%= form_for @team do |f| %>
 Team Name : <%= f.text_field :name %><br>
 <br>
-<%= f.submit "Edit"%>
+<%= f.submit "Submit Edit"%>
 <% end  %>
-
-<%= link_to 'Remove Team', team_path(@team), :confirm => 'Are you sure?', :method => :destroy %>
+<br>
+<%= button_to "Delete Team", {:controller => :teams, :action => 'destroy', :id => @team.id}, :method => :delete, data: {confirm: "This will delete the team. Are you sure?"} %>
