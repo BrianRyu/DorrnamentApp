@@ -5,7 +5,8 @@
 <h3>Current Teams</h3>
 <ul>
   <% @tournament.teams.each do |team| %>
-  <li><%= team.name %></li>
+  <li><%= team.name %><%= button_to "Delete", {:controller => :entries,
+    :action => 'destroy', :team_id => team.id, :tournament_id => @tournament.id }, :method => :delete %></li>
   <ul>
     <% team.players.sort_by(&:name).each do |player| %>
     <li><%= player.name %></li>
@@ -36,6 +37,6 @@
 <%= error %>
 <% end %>
 
-<%= link_to 'DELETE',url_for(action: :destroy,
-id: @tournament.id), method: :delete,
-data: {confirm: "This will delete the tournament and all entries. Are you sure?"} %>
+<%= button_to "Delete Tournament", {:controller => :tournaments,
+  :action => 'destroy', :id => @tournament.id}, :method => :delete,
+  data: {confirm: "This will delete the tournament and all entries. Are you sure?"} %>
