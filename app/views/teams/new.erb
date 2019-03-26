@@ -3,8 +3,16 @@
 
 <%= form_for @team do |f| %>
 Team Name : <%= f.text_field :name %><br>
-<br>
-<%= f.submit "Submit Create"%>
+  <%= f.fields_for :players do |player| %>
+    <%= player.collection_select :id, (Player.all - @team.players), :id, :name %>
+    <% end %> <br>
+  <%= f.fields_for :players do |player| %>
+    <%= player.collection_select :id, (Player.all - @team.players), :id, :name %>
+    <% end %> <br>
+<%= f.submit "Create Team"%>
 <% end  %>
 <br>
+
 <%= button_to "Back To All Teams", {:controller => :teams, :action => 'index', :id => @team.id}, :method => :get %>
+
+
