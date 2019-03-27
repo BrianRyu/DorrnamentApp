@@ -19,7 +19,16 @@ p {
 }
 
 body {
-    text-align: ; 
+    text-align: left;
+    background-image: url(https://i.kinja-img.com/gawker-media/image/upload/s--5fSOe0hN--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/18he4twayfxh9jpg.jpg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position-x: bottom;
+    background-position-y: right;
+}
+
+li {
+    list-style: none;
 }
 
 /*********************** LOGIN STYLE  **************************/
@@ -27,8 +36,8 @@ body {
     height: 200px;
     width: 400px;
     position: center;
-    background-image: url(https://i.kinja-img.com/gawker-media/image/upload/s--5fSOe0hN--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/18he4twayfxh9jpg.jpg);
     background-position: center;
+}
 
 body {
   color: #5f5f5f;
