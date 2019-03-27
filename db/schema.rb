@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_27_134212) do
+ActiveRecord::Schema.define(version: 2019_03_27_155204) do
 
   create_table "drafts", force: :cascade do |t|
     t.integer "player_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_03_27_134212) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "img_url"
   end
 
 end

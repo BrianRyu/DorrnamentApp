@@ -24,8 +24,12 @@ class TeamsController < ApplicationController
     end
 
     def update
-        @team.update(team_params)
-        redirect_to @team
+      byebug
+      @team.update(team_params)
+      @team.players.destroy_all
+      @team.players << Player.find(player1_params)
+      @team.players << Player.find(player2_params)
+      redirect_to @team
     end
     
     def destroy 

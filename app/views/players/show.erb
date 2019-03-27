@@ -8,3 +8,6 @@
 <%= button_to "Delete Player", {:controller => :players, :action => 'destroy', :id => @player.id}, :method => :delete, data: {confirm: "This will delete the player. Are you sure?"} %>
 
 <p> <%= "Email: #{@player.email}" if @player.id == session[:player_id]%> </p>
+
+<%= button_to "Edit Information", {:controller => :players,
+  :action => 'edit', :id => @player.id}, :method => :get if @player.id == session[:player_id] %>
