@@ -9,8 +9,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <table>
       <tr>
-        <th><%= link_to "All Venues", venues_path %></th>
-        <th><%= link_to "All Tournaments", "/tournaments" %></th>
+        <th><%= link_to "Venues", venues_path %></th>
+        <th><%= link_to "Tournaments", "/tournaments" %></th>
         <th><%= link_to "Teams", teams_path %></th>
         <th><%= link_to "Players", players_path %></th>
         <th><%= link_to "Analytics", "/analytics" %></th>
@@ -26,7 +26,7 @@
   </head>
 
   <body>
-
+    <!-- The video -->
 
     <%= yield %>
   </body>
