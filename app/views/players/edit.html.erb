@@ -15,3 +15,6 @@
 <%= f.password_field :password_confirmation %><br>
 <%= f.submit%>
 <% end %>
+<%= button_to "Delete Player", {:controller => :players,
+  :action => 'destroy', :id => @player.id}, :method => :delete,
+  data: {confirm: "This will delete the player. Are you sure?"} %>

@@ -17,7 +17,13 @@ class PlayersController < ApplicationController
 
     def create
         @player = Player.create(player_params)
-        redirect_to @player
+        if @player.save
+          session[:player_id] = @player.id
+          session[:name] = @player.name
+          redirect_to @player
+        else
+          render :new
+        end
     end
 
     def edit
@@ -31,6 +37,12 @@ class PlayersController < ApplicationController
       else
           render :edit
       end
+    end
+
+    def destroy
+      @player.destroy
+      ############################ DESTROY SESSION!
+      redirect_to players_path
     end
 
     private
