@@ -20,7 +20,7 @@ body a:hover {
   font-weight: 500;
 }
 
-h1 {
+h1, h2 {
   margin-left: 20px;
 }
 
@@ -77,4 +77,8 @@ html,body {
   padding: 10px;
   margin: 0px;
   font-size: 12px;
+}
+
+img {
+  float: right;
 }
