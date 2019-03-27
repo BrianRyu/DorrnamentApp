@@ -1,13 +1,7 @@
 <h1>Edit Venue</h1>
-<%= form_for @venue do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.label :location %>
-<%= f.text_field :location %>
-<%= f.label :image_url %>
-<%= f.text_field :img_url %>
-<%= f.submit %>
-<% end %>
+
+<%= render "form" %>
+
 <%= button_to "Delete Venue", {:controller => :venues,
   :action => 'destroy', :id => @venue.id}, :method => :delete,
-  data: {confirm: "This will delete the venue. Are you sure?"} if logged_in %>
+  data: {confirm: "This will delete the venue. Are you sure?"} if logged_in%>
