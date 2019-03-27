@@ -4,8 +4,11 @@
 
 <%= form_for @team do |f| %>
 Team Name : <%= f.text_field :name %><br>
-<br>
-<%= f.submit "Edit"%>
+  <%= f.fields_for :players do |player| %>
+    <%= player.collection_select :id, (Player.all), :id, :name %>
+    <% end %> <br>
+
+<%= f.submit%>
 <% end  %>
 
 <%= button_to "Delete Team", {:controller => :teams,
