@@ -4,5 +4,4 @@ class Player < ApplicationRecord
     has_many :entries, through: :teams
     has_many :tournaments, through: :entries
 
-    has_secure_password
 end
