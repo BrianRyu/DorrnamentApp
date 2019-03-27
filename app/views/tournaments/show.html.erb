@@ -1,13 +1,13 @@
 <h1> <%= @tournament.name %> </h1>
-<p><%= @tournament.date %></p>
-<p><%= link_to @tournament.venue.name, @tournament.venue %></p>
+<h2><%= @tournament.date %></h2>
+<h2><%= link_to @tournament.venue.name, @tournament.venue %></h2>
 
 <h3>Current Teams</h3>
 <ul>
   <% @tournament.teams.each do |team| %>
   <li><%= team.name %><%= button_to "Delete", {:controller => :entries,
-    :action => 'destroy', :team_id => team.id, :tournament_id => @tournament.id }, :method => :delete,
-    data: {confirm: "This will delete the team from the tournament. Are you sure?"} if logged_in %></li>
+    :action => 'destroy', :team_id => team.id, :tournament_id => @tournament.id }, {:method => :delete,
+    data: {confirm: "This will delete the team from the tournament. Are you sure?"}, class: 'button'} if logged_in %></li>
   <ul>
     <% team.players.sort_by(&:name).each do |player| %>
     <li><%= player.name %></li>
@@ -20,7 +20,7 @@
 <%= f.label :team %>
 <%= f.text_field :team %>
 <%= hidden_field_tag 'tournament_id', "#{params[:id]}" %>
-<%= f.submit %>
+<%= f.submit :class => 'button'%>
 <% end %>
 
 <!-- <label>Team Sign Up / Create: </label>
@@ -39,4 +39,4 @@
 <% end %>
 
 <%= button_to "Edit Tournament", {:controller => :tournaments,
-  :action => 'edit', :id => @tournament.id}, :method => :get if logged_in %>
+  :action => 'edit', :id => @tournament.id}, {:method => :get, class: 'button'} if logged_in %>

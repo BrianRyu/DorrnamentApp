@@ -9,4 +9,4 @@ Players:
 </ul>
 
 <%= button_to "Edit Team", {:controller => :teams,
-  :action => 'edit', :id => @team.id}, :method => :get if logged_in %>
+  :action => 'edit', :id => @team.id}, {:method => :get, class: "button"} if logged_in %>

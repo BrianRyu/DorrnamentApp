@@ -1,0 +1,9 @@
+<%= form_for @tournament do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :date %>
+<%= f.date_field :date %>
+<%= f.label :venue %>
+<%= f.collection_select :venue_id, @venues, :id, :name %>
+<%= f.submit class: 'button' %>
+<% end %>
