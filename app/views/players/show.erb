@@ -4,3 +4,4 @@
 <p> Date Of Birth: <%= @player.birth_date %> </p>
 <p> Gender: <%= @player.gender %> </p>
 <p> Start Date of AVP: <%= @player.start_date %> </p>
+<p> <%= "Email: #{@player.email}" if @player.id == session[:player_id]%> </p>

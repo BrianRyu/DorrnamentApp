@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <title>DorrnamentApp</title>
@@ -9,10 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <table>
       <tr>
-        <th><%= link_to "All Venues", "/venues" %></th>
+        <th><%= link_to "All Venues", venues_path %></th>
         <th><%= link_to "All Tournaments", "/tournaments" %></th>
         <th><%= link_to "Teams", teams_path %></th>
         <th><%= link_to "Players", players_path %></th>
+        <th><%= link_to "Analytics", "/analytics" %></th>
+        <th><%= button_to "Log In", {:controller => :sessions,
+          :action => 'new' }, :method => :get %></th>
+        <th><%= session[:name] %></th>
 
       </tr>
     </table>
@@ -20,7 +24,7 @@
 
   <body>
 
-  
+
     <%= yield %>
   </body>
 </html>

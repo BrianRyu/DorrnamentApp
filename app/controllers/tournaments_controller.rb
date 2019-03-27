@@ -1,4 +1,5 @@
 class TournamentsController < ApplicationController
+  before_action :authorized?, except: [:index, :show]
 
     def index
       @tournaments = Tournament.all.sort_by {|t| t.date}

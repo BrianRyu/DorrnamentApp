@@ -1,7 +1,17 @@
 class ApplicationController < ActionController::Base
 
   def current_user
-    session[:name]
+    if session[:player_id]
+      @player = Player.find(session[:player_id])
+    end
+  end
+
+  def logged_in
+    !!current_user
+  end
+
+  def authorized?
+    redirect_to login_path unless logged_in
   end
 
   private
