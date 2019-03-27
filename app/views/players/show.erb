@@ -5,3 +5,6 @@
 <p> Gender: <%= @player.gender %> </p>
 <p> Start Date of AVP: <%= @player.start_date %> </p>
 <p> <%= "Email: #{@player.email}" if @player.id == session[:player_id]%> </p>
+
+<%= button_to "Edit Information", {:controller => :players,
+  :action => 'edit', :id => @player.id}, :method => :get if @player.id == session[:player_id] %>

@@ -6,7 +6,7 @@
 </ul>
 
 <%= button_to "New Tournament", {:controller => :tournaments,
-  :action => 'new',}, :method => :get if logged_in %>
+  :action => 'new',}, :method => :get %>
 <%= button_to "Register", {:controller => :players,
   :action => 'new' }, :method => :get if !logged_in %>
 <%= button_to "Log In", {:controller => :sessions,

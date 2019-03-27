@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
    skip_before_action :verify_authenticity_token
+       before_action :authorized?
 
   def create
     @entry = Entry.create(create_entry_params)
