@@ -6,7 +6,5 @@
     <% end %>
 </ul>
 
-<%= link_to "Create Your Team Here!", new_team_path %>
-
-
-     
+<%= button_to "Create Your Team Here!", {:controller => :teams,
+  :action => 'new'}, {:method => :get, class: "button"} %>

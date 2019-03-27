@@ -1,7 +1,11 @@
-<p>Teams: <%= Team.all.count %></p>
-<p>Tournaments: <%= Tournament.all.count %></p>
-<p>Venues: <%= Venue.all.count %></p>
-<p>Players: <%= Player.all.count %></p>
+<ul>
+
+<li>Teams: <%= Team.all.count %></li>
+<li>Tournaments: <%= Tournament.all.count %></li>
+<li>Venues: <%= Venue.all.count %></li>
+<li>Players: <%= Player.all.count %></li>
 <% Player.all.each do |p| %>
-  <p><%= p.name %> is <%= DateTime.now.year - p.birth_date.year %> years old</p>
+  <li><%= p.name %> is <%= DateTime.now.year - p.birth_date.year %> years old</li>
 <% end %>
+
+</ul>

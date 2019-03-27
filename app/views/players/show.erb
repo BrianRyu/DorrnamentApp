@@ -7,4 +7,4 @@
 <p> <%= "Email: #{@player.email}" if @player.id == session[:player_id]%> </p>
 
 <%= button_to "Edit Information", {:controller => :players,
-  :action => 'edit', :id => @player.id}, :method => :get if @player.id == session[:player_id] %>
+  :action => 'edit', :id => @player.id}, {:method => :get, class: 'button'} if @player.id == session[:player_id] %>
