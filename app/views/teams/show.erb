@@ -8,4 +8,5 @@ Players:
     <% end %>
 </ul>
 
-<%= link_to "Edit Your Team", edit_team_path %>
+<%= button_to "Edit Team", {:controller => :teams,
+  :action => 'edit', :id => @team.id}, :method => :get if logged_in %>

@@ -21,8 +21,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session.delete :player_id
     session.delete :name
-    redirect_to controller: 'application', action: 'hello'
+    redirect_to login_path
   end
 
 end
