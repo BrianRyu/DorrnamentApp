@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  
     before_action :authorized?, except: [:index, :show]
     before_action :find_team, only: [:show, :edit, :update, :destroy]
 
@@ -24,7 +25,6 @@ class TeamsController < ApplicationController
     end
 
     def update
-      byebug
       @team.update(team_params)
       @team.players.destroy_all
       @team.players << Player.find(player1_params)
