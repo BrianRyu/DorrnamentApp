@@ -6,3 +6,5 @@
 <p> Start Date of AVP: <%= @player.start_date %> </p>
 
 <%= button_to "Delete Player", {:controller => :players, :action => 'destroy', :id => @player.id}, :method => :delete, data: {confirm: "This will delete the player. Are you sure?"} %>
+
+<p> <%= "Email: #{@player.email}" if @player.id == session[:player_id]%> </p>

@@ -6,7 +6,8 @@
 <ul>
   <% @tournament.teams.each do |team| %>
   <li><%= team.name %><%= button_to "Delete", {:controller => :entries,
-    :action => 'destroy', :team_id => team.id, :tournament_id => @tournament.id }, :method => :delete %></li>
+    :action => 'destroy', :team_id => team.id, :tournament_id => @tournament.id }, :method => :delete,
+    data: {confirm: "This will delete the team from the tournament. Are you sure?"} %></li>
   <ul>
     <% team.players.sort_by(&:name).each do |player| %>
     <li><%= player.name %></li>
