@@ -57,7 +57,7 @@ table {
   background-image: linear-gradient(#ff2222, #e60113);
   width: 100%;
   padding: 100;
-  /* position: fixed; */
+  position: fixed;
   top: 0;
 }
 th a {
@@ -72,4 +72,10 @@ th a:hover {
   background-image: linear-gradient(#f5f5f5, #dbdbdb);
   color: #333;
 >>>>>>> 6ccd5bbc553a0b9a8409a0688302ab020cb757af
+}
+
+.spacer
+{
+    width: 100%;
+    height: 50px;
 }
