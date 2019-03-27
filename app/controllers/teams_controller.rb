@@ -1,6 +1,11 @@
 class TeamsController < ApplicationController
+<<<<<<< HEAD
     before_action :authorized?, except: [:index, :show]
     before_action :find_team, only: [:show, :edit, :update, :destroy]
+=======
+  before_action :authorized?, except: [:index, :show]
+  before_action :find_team, only: [:show, :edit, :update, :destroy]
+>>>>>>> 6ccd5bbc553a0b9a8409a0688302ab020cb757af
 
     def index
         @teams = Team.all
@@ -24,8 +29,11 @@ class TeamsController < ApplicationController
     end
 
     def update
-        @team.update(team_params)
-        redirect_to @team
+      @team.update(team_params)
+      @team.players.destroy_all
+      @team.players << Player.find(player1_params)
+      @team.players << Player.find(player2_params)
+      redirect_to @team
     end
     
     def destroy 

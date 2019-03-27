@@ -4,10 +4,10 @@
 <%= form_for @team do |f| %>
 Team Name : <%= f.text_field :name %><br>
   <%= f.fields_for :players do |player| %>
-    <%= player.collection_select :id, (Player.all - @team.players), :id, :name %>
+    <%= player.collection_select :id, (Player.all), :id, :name %>
     <% end %> <br>
   <%= f.fields_for :players do |player| %>
-    <%= player.collection_select :id, (Player.all - @team.players), :id, :name %>
+    <%= player.collection_select :id, (Player.all), :id, :name %>
     <% end %> <br>
 <%= f.submit "Create Team"%>
 <% end  %>
