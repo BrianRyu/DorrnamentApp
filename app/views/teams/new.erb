@@ -11,8 +11,8 @@ Team Name : <%= f.text_field :name %><br>
     <% end %> <br>
 <%= f.submit "Create Team"%>
 <% end  %>
+
 <br>
 
 <%= button_to "Back To All Teams", {:controller => :teams, :action => 'index', :id => @team.id}, :method => :get %>
-
 
