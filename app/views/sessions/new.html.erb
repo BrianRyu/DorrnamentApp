@@ -5,3 +5,10 @@
   <input type="password" name="password" value=""> <br>
   <input type=submit value='login'>
 <% end %>
+<% if @player %>
+<ul>
+  <% @player.errors.full_messages.each do |error| %>
+  <li><font color='red'><%= error %></font></li>
+</ul>
+<% end %>
+<% end %>

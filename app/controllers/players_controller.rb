@@ -41,8 +41,9 @@ class PlayersController < ApplicationController
 
     def destroy
       @player.destroy
-      ############################ DESTROY SESSION!
-      redirect_to players_path
+      session.delete :player_id
+      session.delete :name
+      redirect_to login_path
     end
 
     private

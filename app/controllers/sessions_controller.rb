@@ -17,6 +17,9 @@ class SessionsController < ApplicationController
       session[:player_id] = @player.id
       session[:name] = @player.name
       redirect_to @player
+    else
+      @player.errors.add(:incorrect, "username or password")
+      render :new
     end
   end
 
