@@ -4,7 +4,7 @@
 <h3>Upcoming Tournaments</h3>
 <ul>
   <% @tournaments.each do |tournament| %>
-  <li><%= tournament.date %> - <%= link_to tournament.name, tournament %></li>
+  <li><%= tournament.date.to_formatted_s(:long_ordinal) %> - <%= link_to tournament.name, tournament %></li>
   <% end %>
 </ul>
 
