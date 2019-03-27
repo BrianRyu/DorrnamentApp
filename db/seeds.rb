@@ -23,6 +23,7 @@ rosalina = Player.create!(name: 'Rosalina', gender: 'female', birth_date: "0000-
 donkey_kong = Player.create!(name: 'Donkey Kong', gender: 'male', birth_date: "1982-10-13", start_date: "2005-9-13", password: "pw")
 diddy_kong = Player.create!(name: 'Diddy Kong', gender: 'male', birth_date: "1983-9-13", start_date: "2003-9-13", password: "pw")
 
+
 brobro = Team.create!(name: "BroBro")
 princesses = Team.create!(name: "Princesses")
 dkong = Team.create!(name: "DKong")

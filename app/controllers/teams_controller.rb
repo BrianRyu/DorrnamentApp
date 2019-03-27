@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
-  
-    before_action :authorized?, except: [:index, :show]
-    before_action :find_team, only: [:show, :edit, :update, :destroy]
+
+  before_action :authorized?, except: [:index, :show]
+  before_action :find_team, only: [:show, :edit, :update, :destroy]
 
     def index
         @teams = Team.all
