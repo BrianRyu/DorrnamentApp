@@ -39,4 +39,4 @@
 <% end %>
 
 <%= button_to "Edit Tournament", {:controller => :tournaments,
-  :action => 'edit', :id => @tournament.id}, :method => :get %>
+  :action => 'edit', :id => @tournament.id}, :method => :get if logged_in %>
