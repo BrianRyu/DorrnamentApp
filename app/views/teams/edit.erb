@@ -2,6 +2,7 @@
 
 <h3> Edit Team </h3>
 
+
 <% @team.errors.full_messages.each do |error| %>
 <li><font color='red'><%= error %></font></li>
 <% end %>
@@ -17,6 +18,16 @@ Team Name : <%= f.text_field :name %><br>
 <%= f.submit :class => 'button'%>
 <% end  %>
 
+<form class="" action="/teams/<%= @team.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <%= render 'form' %>
+  <input type="submit" name="" value="Edit Team" class="button">
+</form>
+
+
 <%= button_to "Delete Team", {:controller => :teams,
   :action => 'destroy', :id => @team.id}, {:method => :delete, data: {confirm: "This will delete the team. Are you sure?"}, class: 'button'} %>
+
+
+<%= render "errors" %>
 

@@ -1,8 +1,6 @@
 <h1>Create Tournament</h1>
 <%= render 'form' %>
-<% @tournament.errors.full_messages.each do |error| %>
-<%= error %>
-<% end %>
+<%= render 'errors' %>
 <%= button_to "Delete Tournament", {:controller => :tournaments,
   :action => 'destroy', :id => @tournament.id}, {:method => :delete,
   data: {confirm: "This will delete the tournament and all entries. Are you sure?"}, class: "button"} %>

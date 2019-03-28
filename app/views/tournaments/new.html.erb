@@ -1,5 +1,3 @@
 <h1>Create Tournament</h1>
 <%= render "form" %>
-<% @tournament.errors.full_messages.each do |error| %>
-<%= error %>
-<% end %>
+<%= render "errors" %>
