@@ -4,6 +4,6 @@
 <%= f.label :date %>
 <%= f.date_field :date %>
 <%= f.label :venue %>
-<%= f.collection_select :venue_id, @venues, :id, :name %>
+<%= f.collection_select :venue_id, Venue.all, :id, :name %>
 <%= f.submit class: 'button' %>
 <% end %>

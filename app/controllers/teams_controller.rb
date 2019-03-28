@@ -19,6 +19,11 @@ class TeamsController < ApplicationController
       @team = Team.create(team_params)
       @team.players << Player.find(player1_params)
       @team.players << Player.find(player2_params)
+      if @team.save
+        redirect_to @team
+      else
+        render :new
+      end
     end
 
     def edit

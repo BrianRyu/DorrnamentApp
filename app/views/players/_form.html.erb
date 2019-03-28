@@ -3,17 +3,17 @@
 <%= f.text_field :name %><br>
 <%= f.label :birth_date %>
 <%= f.date_field :birth_date %><br>
-<%= f.label :gender %>
-<%= f.text_field :gender %><br>
-<%= f.label :start_date %>
-<%= f.date_field :start_date %><br>
 <%= f.label :email %>
 <%= f.email_field :email %><br>
 <%= f.label :password %>
 <%= f.password_field :password %><br>
 <%= f.label :password_confirmation %>
 <%= f.password_field :password_confirmation %><br>
+<%= f.label :gender %>
+<%= f.text_field :gender %> (optional)<br>
+<%= f.label :start_date %>
+<%= f.date_field :start_date %> (optional)<br>
 <%= f.label :image_url %>
-<%= f.text_field :img_url %><br>
+<%= f.text_field :img_url %> (optional)<br>
 <%= f.submit class: 'button'%>
 <% end %>
