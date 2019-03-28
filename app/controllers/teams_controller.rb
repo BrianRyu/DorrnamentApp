@@ -4,6 +4,8 @@ class TeamsController < ApplicationController
   before_action :find_team, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token, only: [:update, :create]
 
+  helper_method :on_team
+
     def index
         @teams = Team.all
     end
@@ -59,16 +61,8 @@ class TeamsController < ApplicationController
         @team = Team.find(params[:id])
     end
 
-    # def player1_params
-    #   params[:team][:players_attributes]["0"][:id]
-    # end
-    #
-    # def player2_params
-    #   params[:team][:players_attributes]["1"][:id]
-    # end
-
-    # def player_params
-    #   p params["team"]["name"]["players_attributes"]["0"]["id"])
-    # end
+    def on_team
+      @team.players.include?(Player.find(session[:player_id]))
+    end
 
 end

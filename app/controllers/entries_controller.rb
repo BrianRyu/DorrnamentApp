@@ -16,9 +16,6 @@ class EntriesController < ApplicationController
   private
 
   def create_entry_params
-    params[:entry][:tournament_id] = params[:tournament_id]
-    team = Team.find_or_create_by(name: params[:entry][:team])
-    params[:entry][:team_id] = team.id
     params.require(:entry).permit(:tournament_id, :team_id)
   end
 

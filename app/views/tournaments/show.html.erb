@@ -13,14 +13,14 @@
   </ul>
   <%= button_to "Delete", {:controller => :entries,
     :action => 'destroy', :team_id => team.id, :tournament_id => @tournament.id }, {:method => :delete,
-    data: {confirm: "This will delete the team from the tournament. Are you sure?"}, class: 'button'} if team.players.map(&:id).include?(session[:player_id]) %>
+    data: {confirm: "This will delete the team from the tournament. Are you sure?"}, class: 'button'} if admin or on_team %>
   <% end %>
 </ul>
 
 <%= form_for @entry do |f| %>
 <%= f.label :team %>
-<%= f.text_field :team %>
-<%= hidden_field_tag 'tournament_id', "#{params[:id]}" %>
+<%= f.collection_select :team_id, (Team.all - @tournament.teams), :id, :name %>
+<%= hidden_field_tag 'entry[tournament_id]', "#{params[:id]}" %>
 <%= f.submit :class => 'button'%>
 <% end %>
 
@@ -54,4 +54,4 @@
 <% end %>
 
 <%= button_to "Edit Tournament", {:controller => :tournaments,
-  :action => 'edit', :id => @tournament.id}, {:method => :get, class: 'button'} if logged_in %>
+  :action => 'edit', :id => @tournament.id}, {:method => :get, class: 'button'} if admin %>
