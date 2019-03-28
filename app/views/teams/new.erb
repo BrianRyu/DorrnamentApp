@@ -1,6 +1,11 @@
 
 <h1> Create Your Team! </h1>
 
+<% @team.errors.full_messages.each do |error| %>
+<li><font color='red'><%= error %></font></li>
+<% end %>
+</ul>
+
 <%= form_for @team do |f| %>
 Team Name : <%= f.text_field :name %><br>
   <%= f.fields_for :players do |player| %>
@@ -13,3 +18,4 @@ Team Name : <%= f.text_field :name %><br>
 <% end  %>
 
 <%= button_to "Back To All Teams", {:controller => :teams, :action => 'index'}, {:method => :get, class: "button"} %>
+
