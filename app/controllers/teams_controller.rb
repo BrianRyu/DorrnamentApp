@@ -62,7 +62,7 @@ class TeamsController < ApplicationController
     end
 
     def on_team
-      session[:player_id] ? @team.players.include?(Player.find(session[:player_id])) : false
+      logged_in ? @team.players.include?(Player.find(session[:player_id])) : false
     end
 
 end

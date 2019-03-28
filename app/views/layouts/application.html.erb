@@ -14,7 +14,7 @@
         <th><%= link_to "Teams", teams_path %></th>
         <th><%= link_to "Players", players_path %></th>
         <th><%= link_to "Analytics", "/analytics" %></th>
-        <th><%= logged_in ? (button_to "Sign Out", {:controller => :sessions,
+        <th><%= logged_in ? (button_to "Log Out", {:controller => :sessions,
         :action => 'destroy'}, {:method => :delete, class: "button upper-right"}) : (button_to "Log In", {:controller => :sessions,
         :action => 'new' }, {:method => :get, class: "button upper-right"}) %> </th>
         <th> <%= button_to "Register", {:controller => :players,

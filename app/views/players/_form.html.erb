@@ -15,13 +15,13 @@
 <%= f.password_field :password_confirmation %><br>
 <br>
 <%= f.label :gender %>
-<%= f.text_field :gender, value: '(optional)'%><br>
+<%= f.text_field :gender, placeholder: '(optional)'%><br>
 <br>
 <%= f.label :start_date %>
-<%= f.date_field :start_date %> (optional)<br>
+<%= f.date_field :start_date, placeholder: '(optional)'%><br>
 <br>
 <%= f.label :image_url %>
-<%= f.text_field :img_url %> (optional)<br>
+<%= f.text_field :img_url, placeholder: '(optional)'%><br>
 <br>
 <%= f.submit class: 'button'%>
 <% end %>
