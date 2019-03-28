@@ -4,8 +4,12 @@ class Player < ApplicationRecord
     has_many :teams, through: :drafts
     has_many :entries, through: :teams
     has_many :tournaments, through: :entries
+    before_save :has_http?
 
     validates :name, :birth_date, :email, presence: true
-    validates :img_url, format: {with: /(\A(https*\/\/).+(\..+)\z)?/}
+
+    def has_http?
+      img_url.match(/\A(https?:\/\/)/) ? true : Player.last.update(img_url: nil) if img_url
+    end
 
 end
