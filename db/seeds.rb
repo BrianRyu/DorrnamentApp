@@ -12,16 +12,16 @@ Team.destroy_all
 Venue.destroy_all
 Tournament.destroy_all
 
-mario = Player.create!(name: 'Mario', gender: 'male', birth_date: "1981-09-13", start_date: "1991-09-13", password: 'pw', img_url: 'http://www.designbolts.com/wp-content/uploads/2014/08/super-marios-head-shot-illustrator-tutorial.jpg')
-luigi = Player.create!(name: 'Luigi', gender: 'male', birth_date: "1986-9-13", start_date: "1995-9-13", password: 'pw', img_url: 'https://www.bing.com/th?id=OIP.7OPlfJlTv6XDctCqFkWJ3AHaHx&pid=Api&dpr=2&rs=1&p=0')
-princess_peach = Player.create!(name: 'Princess Peach', gender: 'female', birth_date: "1985-11-13", start_date: "1999-12-13", password: 'pw', img_url: 'https://pbs.twimg.com/media/CrTcwwZUIAI-ATe.jpg')
-toad = Player.create!(name: 'Toad', gender: 'female', birth_date: "1991-3-13", start_date: "2000-1-13", password: 'pw', img_url: 'https://cdn.vox-cdn.com/thumbor/LCI5YbI8_NcZeihfRXzy6atDWs0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9800393/super_mario_run_gets_free_toad_dlc_urgu.jpg')
-yoshi = Player.create!(name: 'Yoshi', gender: 'female', birth_date: "1983-8-13", start_date: "1997-4-27", password: 'pw', img_url: 'https://pbs.twimg.com/profile_images/449130100064145410/PNOqhoWA.png')
-bowser = Player.create!(name: 'Bowser', gender: 'male', birth_date: "1999-9-13", start_date: "2011-11-13", password: 'pw', img_url: 'http://shortyawards.com.s3.amazonaws.com/entries/8d6ead05-5ef7-45e8-8b68-66d769e84c9b.jpg')
-princess_daisy = Player.create!(name: 'Princess Daisy', gender: 'female', birth_date: "2003-9-13", start_date: "2010-9-13", password: 'pw', img_url: 'https://s-media-cache-ak0.pinimg.com/originals/1f/54/f1/1f54f1fd7d1c5ce442c52ce3fa7d7317.jpg')
-rosalina = Player.create!(name: 'Rosalina', gender: 'female', birth_date: "0000-01-01", start_date: "2000-9-13", password: 'pw', img_url: 'http://i3.kym-cdn.com/photos/images/facebook/001/167/189/282.jpg')
-donkey_kong = Player.create!(name: 'Donkey Kong', gender: 'male', birth_date: "1982-10-13", start_date: "2005-9-13", password: 'pw', img_url: 'http://files.gamebanana.com/img/ico/sprays/54f2862be0933.png')
-diddy_kong = Player.create!(name: 'Diddy Kong', gender: 'male', birth_date: "1983-9-13", start_date: "2003-9-13", password: 'pw', img_url: 'http://rs103.pbsrc.com/albums/m136/MER255/Donkey%20Kong/Diddy-Kong_zps77f7f7e1.gif~c200')
+mario = Player.create!(name: 'Mario', gender: 'male', birth_date: "1981-09-13", start_date: "1991-09-13", email: '1@1', password: 'pw', img_url: 'http://www.designbolts.com/wp-content/uploads/2014/08/super-marios-head-shot-illustrator-tutorial.jpg')
+luigi = Player.create!(name: 'Luigi', gender: 'male', birth_date: "1986-9-13", start_date: "1995-9-13", email: '2@2', password: 'pw', img_url: 'https://www.bing.com/th?id=OIP.7OPlfJlTv6XDctCqFkWJ3AHaHx&pid=Api&dpr=2&rs=1&p=0')
+princess_peach = Player.create!(name: 'Princess Peach', gender: 'female', birth_date: "1985-11-13", email: '3@2', start_date: "1999-12-13", password: 'pw', img_url: 'https://pbs.twimg.com/media/CrTcwwZUIAI-ATe.jpg')
+toad = Player.create!(name: 'Toad', gender: 'female', birth_date: "1991-3-13", start_date: "2000-1-13", email: '4@4', password: 'pw', img_url: 'https://cdn.vox-cdn.com/thumbor/LCI5YbI8_NcZeihfRXzy6atDWs0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9800393/super_mario_run_gets_free_toad_dlc_urgu.jpg')
+yoshi = Player.create!(name: 'Yoshi', gender: 'female', birth_date: "1983-8-13", start_date: "1997-4-27", email: '5@5', password: 'pw', img_url: 'https://pbs.twimg.com/profile_images/449130100064145410/PNOqhoWA.png')
+bowser = Player.create!(name: 'Bowser', gender: 'male', birth_date: "1999-9-13", start_date: "2011-11-13", email: '6@6', password: 'pw', img_url: 'http://shortyawards.com.s3.amazonaws.com/entries/8d6ead05-5ef7-45e8-8b68-66d769e84c9b.jpg')
+princess_daisy = Player.create!(name: 'Princess Daisy', gender: 'female', birth_date: "2003-9-13", start_date: "2010-9-13", email: '7@7', password: 'pw', img_url: 'https://s-media-cache-ak0.pinimg.com/originals/1f/54/f1/1f54f1fd7d1c5ce442c52ce3fa7d7317.jpg')
+rosalina = Player.create!(name: 'Rosalina', gender: 'female', birth_date: "0000-01-01", start_date: "2000-9-13", email: '8@8', password: 'pw', img_url: 'http://i3.kym-cdn.com/photos/images/facebook/001/167/189/282.jpg')
+donkey_kong = Player.create!(name: 'Donkey Kong', gender: 'male', birth_date: "1982-10-13", start_date: "2005-9-13", email: '9@9', password: 'pw', img_url: 'http://files.gamebanana.com/img/ico/sprays/54f2862be0933.png')
+diddy_kong = Player.create!(name: 'Diddy Kong', gender: 'male', birth_date: "1983-9-13", start_date: "2003-9-13", email: '10@10', password: 'pw', img_url: 'http://rs103.pbsrc.com/albums/m136/MER255/Donkey%20Kong/Diddy-Kong_zps77f7f7e1.gif~c200')
 brian = Player.create!(name: 'Brian Ryu', gender: 'male', birth_date: "1993-07-02", start_date: "2003-9-13", email: 'brian@gmail.com', password: '1', img_url: 'https://pbs.twimg.com/profile_images/24679042/317x317_soulja_boy_400x400.jpg')
 james = Player.create!(name: 'James Dorr', gender: 'male', birth_date: "1991-03-24", start_date: "1999-9-1", email: 'jamesdorr3@gmail.com', password: '1')
 
