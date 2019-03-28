@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+
   before_action :authorized?, except: [:index, :show]
   before_action :find_team, only: [:show, :edit, :update, :destroy]
 
@@ -35,13 +36,12 @@ class TeamsController < ApplicationController
       @team.players << Player.find(player2_params)
       redirect_to @team
     end
-
-    def destroy
-      # @team = Team.find(params[:id])
-      @team.drafts.destroy_all
-      @team.entries.destroy_all
-      @team.destroy
-      redirect_to teams_path
+    
+    def destroy 
+        @team.drafts.destroy_all
+        @team.entries.destroy_all
+        @team.destroy
+        redirect_to teams_path
     end
 
     private

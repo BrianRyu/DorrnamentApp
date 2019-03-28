@@ -1,0 +1,12 @@
+<h1> It's Draft Time! </h1>
+
+<h3> Here are the results for the upcoming season: </h3>
+
+<ul>
+    <% @drafts.each do |draft| %>
+        <li> Player: <%= draft.player.name %> </li> 
+        <li> Team: <%= draft.team.name %> </li>
+        <li> Date of Draft: <%= draft.created_at %> </li>
+        <br>
+    <% end %>
+<ul>

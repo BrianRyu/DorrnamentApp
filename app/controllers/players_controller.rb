@@ -45,6 +45,11 @@ class PlayersController < ApplicationController
       redirect_to login_path
     end
 
+    def edit
+
+    end 
+
+    # private
     private
 
     def player_params
