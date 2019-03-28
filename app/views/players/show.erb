@@ -5,6 +5,7 @@
 <p> Gender: <%= @player.gender %> </p>
 <p> Start Date of AVP: <%= @player.start_date.to_formatted_s(:long_ordinal) %> </p>
 <p> <%= "Email: #{@player.email}" if @player.id == session[:player_id]%> </p>
+<%= image_tag "#{@player.img_url}", width: '500', class: 'right_img' %>
 
 <%= button_to "Edit Information", {:controller => :players,
   :action => 'edit', :id => @player.id}, {:method => :get, class: 'button'} if @player.id == session[:player_id] %>
