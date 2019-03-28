@@ -3,3 +3,7 @@
   :action => 'destroy', :id => @player.id}, {:method => :delete,
   data: {confirm: "This will delete the player. Are you sure?"},
   class: 'button'} %>
+<% @player.errors.full_messages.each do |error| %>
+<li><font color='red'><%= error %></font></li>
+<% end %>
+</ul>

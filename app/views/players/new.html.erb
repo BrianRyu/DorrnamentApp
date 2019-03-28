@@ -1,1 +1,7 @@
 <%= render 'form' %>
+<ul>
+
+<% @player.errors.full_messages.each do |error| %>
+<li><font color='red'><%= error %></font></li>
+<% end %>
+</ul>

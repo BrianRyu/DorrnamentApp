@@ -7,7 +7,6 @@ class PlayersController < ApplicationController
 
     def show
         @player = Player.find(params[:id])
-        render :show
     end
 
     def new
