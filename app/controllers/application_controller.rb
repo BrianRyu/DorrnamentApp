@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   helper_method :logged_in
+  helper_method :admin
+  # helper_method :admin_or_member
 
   def current_user
     if session[:player_id]
@@ -19,6 +21,13 @@ class ApplicationController < ActionController::Base
 
   def require_login
     return head(:forbidden) unless current_user # session.include? :user_id
+  end
+
+  def admin
+    [
+      Player.find_by(email: 'jamesdorr3@gmail.com'),
+      Player.find_by(email: 'brian@gmail.com')
+    ].include?(Player.find(session[:player_id]))
   end
 
 end

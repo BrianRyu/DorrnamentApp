@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
     before_action :authorized?, except: [:new, :create, :index, :show]
+    helper_method :is_self
 
     def index
         @players = Player.all.sort_by(&:name)
@@ -47,7 +48,7 @@ class PlayersController < ApplicationController
 
     def edit
 
-    end 
+    end
 
     # private
     private
@@ -56,5 +57,9 @@ class PlayersController < ApplicationController
         params.require(:player).permit(:name, :birth_date,
           :gender, :start_date, :email, :password,
           :password_confirmation, :img_url)
+    end
+
+    def is_self
+      @player == Player.find(session[:player_id])
     end
 end

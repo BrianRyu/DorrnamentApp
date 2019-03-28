@@ -4,19 +4,7 @@
 
 <form class="" action="/teams/<%= @team.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
-  <label for="">Name: </label>
-  <input type="text" name="team[name]" value="<%= @team.name %>">
-  <label for="">Players: </label>
-  <select name="player1">
-    <% Player.all.each do |player| %>
-    <option value="<%= player.id %>"><%= player.name %></option>
-    <% end %>
-  </select>
-  <select name="player2">
-    <% Player.all.each do |player| %>
-    <option value="<%= player.id %>"><%= player.name %></option>
-    <% end %>
-  </select>
+  <%= render 'form' %>
   <input type="submit" name="" value="Edit Team" class="button">
 </form>
 
