@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <table>
+    <table class= "ribbon">
       <tr>
         <th><%= link_to "Venues", venues_path %></th>
         <th><%= link_to "Tournaments", "/tournaments" %></th>
@@ -15,11 +15,11 @@
         <th><%= link_to "Players", players_path %></th>
         <th><%= link_to "Analytics", "/analytics" %></th>
         <th><%= logged_in ? (button_to "Sign Out", {:controller => :sessions,
-        :action => 'destroy'}, :method => :delete) : (button_to "Log In", {:controller => :sessions,
-        :action => 'new' }, :method => :get) %> </th>
+        :action => 'destroy'}, {:method => :delete, class: "button"}) : (button_to "Log In", {:controller => :sessions,
+        :action => 'new' }, {:method => :get, class: "button"}) %> </th>
         <th> <%= button_to "Register", {:controller => :players,
-          :action => 'new' }, :method => :get if !logged_in%> </th>
-        <th><%= session[:name] %></th>
+          :action => 'new' }, {:method => :get, class: "button"} if !logged_in%> </th>
+        <th><%= link_to session[:name], Player.find(session[:player_id]) if logged_in %></th>
 
       </tr>
     </table>

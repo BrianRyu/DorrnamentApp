@@ -12,8 +12,8 @@ Team Name : <%= f.text_field :name %><br>
   <% end %> 
   <br>
 
-<%= f.submit%>
+<%= f.submit :class => 'button'%>
 <% end  %>
 
-<br>
-<%= button_to "Delete Team", {:controller => :teams, :action => 'destroy', :id => @team.id}, :method => :delete, data: {confirm: "This will delete the team. Are you sure?"} %>
+<%= button_to "Delete Team", {:controller => :teams,
+  :action => 'destroy', :id => @team.id}, {:method => :delete, data: {confirm: "This will delete the team. Are you sure?"}, class: 'button'} %>

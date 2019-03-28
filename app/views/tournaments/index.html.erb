@@ -1,13 +1,9 @@
 <h1>Tournaments</h1>
 <ul>
 <% @tournaments.each do |tournament| %>
-<li><%= tournament.date %> - <%= link_to tournament.name, tournament %> at <%= link_to tournament.venue.name, tournament.venue %></li><br>
+<li><%= tournament.date.to_formatted_s(:long_ordinal) %> - <%= link_to tournament.name, tournament %> at <%= link_to tournament.venue.name, tournament.venue %></li><br>
 <% end %>
 </ul>
 
 <%= button_to "New Tournament", {:controller => :tournaments,
-  :action => 'new',}, :method => :get %>
-<%= button_to "Register", {:controller => :players,
-  :action => 'new' }, :method => :get if !logged_in %>
-<%= button_to "Log In", {:controller => :sessions,
-  :action => 'new' }, :method => :get if !logged_in %>
+  :action => 'new',}, {:method => :get, class: "button"} %>

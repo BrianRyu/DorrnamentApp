@@ -1,23 +1,14 @@
-<div class='login'>
-  <br>
-  <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-    <label for="">Email: </label>
-    <input name=email> <br>
-    <br>
-    <label for="">Password: </label>
-    <input type="password" name="password" value=""> <br>
-    <br>
-    <input type=submit value='Login'>
-  <% end %>
-  <br>
-  <%= button_to "Register", {:controller => :players,
-    :action => 'new' }, :method => :get %>
-</div>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <label for="">Email: </label>
+  <input name=email> <br>
+  <label for="">Password: </label>
+  <input type="password" name="password" value=""> <br>
+  <input type=submit value='login' class='button'>
+<% end %>
   <% if @player %>
-    <ul>
+  <ul>
     <% @player.errors.full_messages.each do |error| %>
-      <li><font color='red'><%= error %></font></li>
-    </ul>
-    <% end %>
+    <li><font color='red'><%= error %></font></li>
+  </ul>
   <% end %>
-
+<% end %>

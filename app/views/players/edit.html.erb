@@ -1,20 +1,5 @@
-<%= form_for @player do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %><br>
-<%= f.label :birth_date %>
-<%= f.date_field :birth_date %><br>
-<%= f.label :gender %>
-<%= f.text_field :gender %><br>
-<%= f.label :start_date %>
-<%= f.date_field :start_date %><br>
-<%= f.label :email %>
-<%= f.email_field :email %><br>
-<%= f.label :password %>
-<%= f.password_field :password %><br>
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %><br>
-<%= f.submit%>
-<% end %>
+<%= render 'form' %>
 <%= button_to "Delete Player", {:controller => :players,
-  :action => 'destroy', :id => @player.id}, :method => :delete,
-  data: {confirm: "This will delete the player. Are you sure?"} %>
+  :action => 'destroy', :id => @player.id}, {:method => :delete,
+  data: {confirm: "This will delete the player. Are you sure?"},
+  class: 'button'} %>

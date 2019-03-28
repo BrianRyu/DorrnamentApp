@@ -1,18 +1,19 @@
 <h1> <%= @tournament.name %> </h1>
-<p><%= @tournament.date %></p>
-<p><%= link_to @tournament.venue.name, @tournament.venue %></p>
+<h2><%= @tournament.date %></h2>
+<h2><%= link_to @tournament.venue.name, @tournament.venue %></h2>
 
 <h3>Current Teams</h3>
 <ul>
   <% @tournament.teams.each do |team| %>
-  <li><%= team.name %><%= button_to "Delete", {:controller => :entries,
-    :action => 'destroy', :team_id => team.id, :tournament_id => @tournament.id }, :method => :delete,
-    data: {confirm: "This will delete the team from the tournament. Are you sure?"} if logged_in %></li>
+  <li><%= team.name %></li>
   <ul>
     <% team.players.sort_by(&:name).each do |player| %>
     <li><%= player.name %></li>
     <% end %>
   </ul>
+  <%= button_to "Delete", {:controller => :entries,
+    :action => 'destroy', :team_id => team.id, :tournament_id => @tournament.id }, {:method => :delete,
+    data: {confirm: "This will delete the team from the tournament. Are you sure?"}, class: 'button'} if team.players.map(&:id).include?(session[:player_id]) %>
   <% end %>
 </ul>
 
@@ -20,9 +21,23 @@
 <%= f.label :team %>
 <%= f.text_field :team %>
 <%= hidden_field_tag 'tournament_id', "#{params[:id]}" %>
-<%= f.submit %>
+<%= f.submit :class => 'button'%>
 <% end %>
 
+<% case @tournament.teams.count %>
+<% when 0 %>
+<%= image_tag "http://images4.fanpop.com/image/photos/16200000/Volleyball-mario-sports-mix-wii-16287296-389-480.jpg", width: '500', class: "right_img"%>
+<% when 1 %>
+<%= image_tag "http://images4.fanpop.com/image/photos/16200000/Volleyball-mario-sports-mix-wii-16287296-389-480.jpg", width: '500', class: "right_img"%>
+<% when 2 %>
+<%= image_tag "http://images4.fanpop.com/image/photos/16200000/Volleyball-mario-sports-mix-wii-16287296-389-480.jpg", width: '500', class: "right_img"%>
+<% when 3 %>
+<%= image_tag "http://www.printyourbrackets.com/fillable-brackets/3-seeded-fillable-single-elimination.png", width: '500', class: "right_img"%>
+<% when 4 %>
+<%= image_tag "http://www.printyourbrackets.com/fillable-brackets/4-single-fillable-bracket.png", width: '500', class: "right_img"%>
+<% when 5 %>
+<%= image_tag "https://www.printyourbrackets.com/fillable-brackets/5-seeded-fillable-single-elimination.png", width: '500', class: "right_img"%>
+<% end %>
 <!-- <label>Team Sign Up / Create: </label>
 <form class="" action="/entries" method="post">
   <input type="text" list="combo-options" id="combobox">
@@ -39,4 +54,4 @@
 <% end %>
 
 <%= button_to "Edit Tournament", {:controller => :tournaments,
-  :action => 'edit', :id => @tournament.id}, :method => :get if logged_in %>
+  :action => 'edit', :id => @tournament.id}, {:method => :get, class: 'button'} if logged_in %>

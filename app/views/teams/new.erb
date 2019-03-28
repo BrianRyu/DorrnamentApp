@@ -9,10 +9,7 @@ Team Name : <%= f.text_field :name %><br>
   <%= f.fields_for :players do |player| %>
     <%= player.collection_select :id, (Player.all), :id, :name %>
     <% end %> <br>
-<%= f.submit "Create Team"%>
+<%= f.submit "Create", :class => 'button'%>
 <% end  %>
 
-<br>
-
-<%= button_to "Back To All Teams", {:controller => :teams, :action => 'index', :id => @team.id}, :method => :get %>
-
+<%= button_to "Back To All Teams", {:controller => :teams, :action => 'index'}, {:method => :get, class: "button"} %>

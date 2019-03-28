@@ -1,7 +1,10 @@
 <h1> All Players </h1>
 
-<ul>
-    <% @players.each do |player| %>
-        <li> <%= link_to player.name, player %> </li><br>
+<table class="players-table">
+  <% @players.each_slice(2) do |players| %>
+    <tr><% players.each do |player| %>
+      <td> <%= image_tag "#{player.img_url}", height: '30' %> <%= link_to player.name, player %> </td><br>
     <% end %>
-</ul>
+  </tr>
+  <% end %>
+</table>
