@@ -12,7 +12,7 @@
     <% end %>
   <%= button_to "Delete", {:controller => :entries,
     :action => 'destroy', :team_id => team.id, :tournament_id => @tournament.id }, {:method => :delete,
-    data: {confirm: "This will delete the team from the tournament. Are you sure?"}, class: 'button'} if admin or on_team %>
+    data: {confirm: "This will delete the team from the tournament. Are you sure?"}, class: 'button'} if admin %>
   </ul>
   <% end %>
 </ul>
