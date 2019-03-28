@@ -15,10 +15,10 @@
         <th><%= link_to "Players", players_path %></th>
         <th><%= link_to "Analytics", "/analytics" %></th>
         <th><%= logged_in ? (button_to "Sign Out", {:controller => :sessions,
-        :action => 'destroy'}, {:method => :delete, class: "button"}) : (button_to "Log In", {:controller => :sessions,
-        :action => 'new' }, {:method => :get, class: "button"}) %> </th>
+        :action => 'destroy'}, {:method => :delete, class: "button upper-right"}) : (button_to "Log In", {:controller => :sessions,
+        :action => 'new' }, {:method => :get, class: "button upper-right"}) %> </th>
         <th> <%= button_to "Register", {:controller => :players,
-          :action => 'new' }, {:method => :get, class: "button"} if !logged_in%> </th>
+          :action => 'new' }, {:method => :get, class: "button upper-right"} if !logged_in%> </th>
         <th><%= link_to session[:name], Player.find(session[:player_id]) if logged_in %></th>
 
       </tr>

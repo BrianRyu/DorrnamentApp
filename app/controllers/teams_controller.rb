@@ -62,7 +62,7 @@ class TeamsController < ApplicationController
     end
 
     def on_team
-      @team.players.include?(Player.find(session[:player_id]))
+      session[:player_id] ? @team.players.include?(Player.find(session[:player_id])) : false
     end
 
 end

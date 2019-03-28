@@ -60,6 +60,6 @@ class PlayersController < ApplicationController
     end
 
     def is_self
-      @player == Player.find(session[:player_id])
+      session[:player_id] ? @player == Player.find(session[:player_id]) : false
     end
 end
