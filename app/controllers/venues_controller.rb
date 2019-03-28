@@ -39,7 +39,7 @@ class VenuesController < ApplicationController
       if @venue.save
           redirect_to @venue
       else
-          render :new
+          render :edit
       end
     end
 
