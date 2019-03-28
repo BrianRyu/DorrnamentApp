@@ -2,6 +2,7 @@ class TeamsController < ApplicationController
 
   before_action :authorized?, except: [:index, :show]
   before_action :find_team, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, only: [:update, :create]
 
     def index
         @teams = Team.all
@@ -17,8 +18,8 @@ class TeamsController < ApplicationController
 
     def create
       @team = Team.create(team_params)
-      @team.players << Player.find(player1_params)
-      @team.players << Player.find(player2_params)
+      @team.players << Player.find(params[:player1])
+      @team.players << Player.find(params[:player2])
       if @team.save
         redirect_to @team
       else
@@ -32,12 +33,16 @@ class TeamsController < ApplicationController
     def update
       @team.update(team_params)
       @team.players.destroy_all
-      @team.players << Player.find(player1_params)
-      @team.players << Player.find(player2_params)
-      redirect_to @team
+      @team.players << Player.find(params[:player1])
+      @team.players << Player.find(params[:player2])
+      if @team.save
+        redirect_to @team
+      else
+        render :edit
+      end
     end
-    
-    def destroy 
+
+    def destroy
         @team.drafts.destroy_all
         @team.entries.destroy_all
         @team.destroy
@@ -54,13 +59,13 @@ class TeamsController < ApplicationController
         @team = Team.find(params[:id])
     end
 
-    def player1_params
-      params[:team][:players_attributes]["0"][:id]
-    end
-
-    def player2_params
-      params[:team][:players_attributes]["1"][:id]
-    end
+    # def player1_params
+    #   params[:team][:players_attributes]["0"][:id]
+    # end
+    #
+    # def player2_params
+    #   params[:team][:players_attributes]["1"][:id]
+    # end
 
     # def player_params
     #   p params["team"]["name"]["players_attributes"]["0"]["id"])
