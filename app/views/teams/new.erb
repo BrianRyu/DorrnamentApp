@@ -13,3 +13,5 @@ Team Name : <%= f.text_field :name %><br>
 <% end  %>
 
 <%= button_to "Back To All Teams", {:controller => :teams, :action => 'index'}, {:method => :get, class: "button"} %>
+
+<%= render "errors" %>
