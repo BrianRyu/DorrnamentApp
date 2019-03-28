@@ -1,29 +1,34 @@
-<h1> Sign Up </h1>
-<%= form_for @player do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %><br>
-<br>
-<%= f.label :birth_date %>
-<%= f.date_field :birth_date %><br>
-<br>
-<%= f.label :email %>
-<%= f.email_field :email %><br>
-<br>
-<%= f.label :password %>
-<%= f.password_field :password %><br>
-<br>
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %><br>
-<br>
-<%= f.label :gender %>
-<%= f.text_field :gender, placeholder: '(optional)'%><br>
-<br>
-<%= f.label :start_date %>
-<%= f.date_field :start_date, placeholder: '(optional)' %><br>
-<br>
-<%= f.label :image_url %>
-<%= f.text_field :img_url, placeholder: '(optional)' %><br>
-<br>
-<%= f.submit class: 'button'%>
-<% end %>
-<%= render 'errors' %>
+<div class='register'>
+    <h1> Sign Up </h1>
+    <%= form_for @player do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <br>
+    <%= f.label :birth_date %>
+    <%= f.date_field :birth_date %><br>
+    <br>
+    <%= f.label :email %>
+    <%= f.email_field :email %><br>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+    <br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %><br>
+    <br>
+    <%= f.label :gender %>
+    <%= f.text_field :gender, placeholder: '(optional)'%><br>
+    <br>
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date, placeholder: '(optional)' %><br>
+    <br>
+    <%= f.label :image_url %>
+    <%= f.text_field :img_url, placeholder: '(optional)' %><br>
+    <br>
+    <%= f.submit class: 'button'%>
+    <% end %>
+    <%= render 'errors' %>
+</div>
+
+
+<%= image_tag "https://i.kinja-img.com/gawker-media/image/upload/s--5fSOe0hN--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/18he4twayfxh9jpg.jpg", class: 'login-pic' %>
