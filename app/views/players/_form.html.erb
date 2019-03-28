@@ -1,19 +1,27 @@
 <%= form_for @player do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %><br>
+<br>
 <%= f.label :birth_date %>
 <%= f.date_field :birth_date %><br>
+<br>
 <%= f.label :email %>
 <%= f.email_field :email %><br>
+<br>
 <%= f.label :password %>
 <%= f.password_field :password %><br>
+<br>
 <%= f.label :password_confirmation %>
 <%= f.password_field :password_confirmation %><br>
+<br>
 <%= f.label :gender %>
 <%= f.text_field :gender %> (optional)<br>
+<br>
 <%= f.label :start_date %>
 <%= f.date_field :start_date %> (optional)<br>
+<br>
 <%= f.label :image_url %>
 <%= f.text_field :img_url %> (optional)<br>
+<br>
 <%= f.submit class: 'button'%>
 <% end %>
