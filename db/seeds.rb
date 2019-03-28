@@ -22,7 +22,7 @@ princess_daisy = Player.create!(name: 'Princess Daisy', gender: 'female', birth_
 rosalina = Player.create!(name: 'Rosalina', gender: 'female', birth_date: "0000-01-01", start_date: "2000-9-13", email: '8@8', password: 'pw', img_url: 'http://i3.kym-cdn.com/photos/images/facebook/001/167/189/282.jpg')
 donkey_kong = Player.create!(name: 'Donkey Kong', gender: 'male', birth_date: "1982-10-13", start_date: "2005-9-13", email: '9@9', password: 'pw', img_url: 'http://files.gamebanana.com/img/ico/sprays/54f2862be0933.png')
 diddy_kong = Player.create!(name: 'Diddy Kong', gender: 'male', birth_date: "1983-9-13", start_date: "2003-9-13", email: '10@10', password: 'pw', img_url: 'http://rs103.pbsrc.com/albums/m136/MER255/Donkey%20Kong/Diddy-Kong_zps77f7f7e1.gif~c200')
-brian = Player.create!(name: 'Brian Ryu', gender: 'male', birth_date: "1993-07-02", start_date: "2003-9-13", email: 'brian@gmail.com', password: '1', img_url: 'https://pbs.twimg.com/profile_images/24679042/317x317_soulja_boy_400x400.jpg')
+brian = Player.create!(name: 'Brian Ryu', gender: 'male', birth_date: "1993-07-02", start_date: "2003-9-13", email: 'brian@gmail.com', password: '1', img_url: 'https://i.pinimg.com/originals/61/97/44/6197442fcc6c0d6c0ccd65bf753ad61e.jpg')
 james = Player.create!(name: 'James Dorr', gender: 'male', birth_date: "1991-03-24", start_date: "1999-9-1", email: 'jamesdorr3@gmail.com', password: '1')
 
 brobro = Team.create!(name: "BroBro")
