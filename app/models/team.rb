@@ -8,4 +8,5 @@ class Team < ApplicationRecord
     accepts_nested_attributes_for :players
 
     validates :name, presence: true
+
 end

@@ -1,6 +1,26 @@
 
 <h1> Create Your Team! </h1>
 
+
+<% @team.errors.full_messages.each do |error| %>
+<li><font color='red'><%= error %></font></li>
+<% end %>
+</ul>
+
+<%= form_for @team do |f| %>
+Team Name : <%= f.text_field :name %><br>
+  <%= f.fields_for :players do |player| %>
+    <%= player.collection_select :id, (Player.all), :id, :name %>
+    <% end %> <br>
+  <%= f.fields_for :players do |player| %>
+    <%= player.collection_select :id, (Player.all), :id, :name %>
+    <% end %> <br>
+<%= f.submit "Create", :class => 'button'%>
+<% end  %>
+
+<%= button_to "Back To All Teams", {:controller => :teams, :action => 'index'}, {:method => :get, class: "button"} %>
+
+
 <form class="" action="/teams" method="post">
   <%= render 'form' %>
   <input type="submit" name="" value="Create Team" class="button">
@@ -9,3 +29,4 @@
 <%= button_to "Back To All Teams", {:controller => :teams, :action => 'index'}, {:method => :get, class: "button"} %>
 
 <%= render "errors" %>
+

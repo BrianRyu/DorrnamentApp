@@ -6,4 +6,5 @@ class Tournament < ApplicationRecord
     has_many :players, through: :drafts
 
     validates :name, :date, presence: true
+
 end
