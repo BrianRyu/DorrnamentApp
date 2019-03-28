@@ -9,9 +9,11 @@ p, h1, h2, h3 {
   margin-left: 7%;
 }
 
+
 body a {
   color: #5f5f5f;
   text-decoration: none;
+  /* margin-left: 7%; */
 }
 
 body a:hover {
@@ -20,7 +22,6 @@ body a:hover {
 }
 
 h1, h2 {
-  margin-left: 20px;
   color: #777
 }
 
@@ -43,6 +44,10 @@ th a:hover {
   background-image: linear-gradient(#f5f5f5, #dbdbdb);
   color: #333;
   border-radius: 20px;
+}
+
+th a:active {
+  background-color: #fff;
 }
 
 .spacer
@@ -72,6 +77,7 @@ html,body {
     padding: 0;
     background-image: url("https://orig12.deviantart.net/8498/f/2009/056/9/5/conical_light_by_cope57.png");
     background-size: 1500px 750px;
+    display: inline;
 }
 
 .button {
@@ -80,6 +86,7 @@ html,body {
   background-image: linear-gradient(#f0f0f0, #E5E1DE, #f0f0f0);
   padding: 10px;
   margin-bottom: 3px;
+  margin-top: 3px;
   font-size: 12px;
   margin-left: 7%;
 }
@@ -92,6 +99,8 @@ html,body {
   position: fixed;
   top: 100px;
   right: 7%;
+  z-index: -1;
+  clear: left;
 }
 
 .players-table {
@@ -103,4 +112,15 @@ html,body {
 td {
   padding: 3%;
   width: 200px
+}
+
+label {
+  position: absolute;
+  left: 7%;
+}
+
+input[type="text"], input[type="date"], input[type="email"],
+input[type="password"], input[name="email"] {
+  position: absolute;
+  left: 14%;
 }

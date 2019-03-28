@@ -20,7 +20,7 @@
 <%= form_for @entry do |f| %>
 <%= f.label :team %>
 <%= f.collection_select :team_id, (Team.all - @tournament.teams), :id, :name %>
-<%= hidden_field_tag 'entry[tournament_id]', "#{params[:id]}" %>
+<%= hidden_field_tag 'entry[tournament_id]', "#{params[:id]}" %> <br>
 <%= f.submit :class => 'button'%>
 <% end %>
 

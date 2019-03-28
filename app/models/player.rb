@@ -6,6 +6,7 @@ class Player < ApplicationRecord
     has_many :tournaments, through: :entries
 
     validates :name, :birth_date, :email, :password, presence: true
+    validates :img_url, format: {with: /(\A(https*\/\/).+(\..+)\z)?/}
 
     def age
       now = Time.now.utc.to_date

@@ -24,10 +24,16 @@ class ApplicationController < ActionController::Base
   end
 
   def admin
-    [
+    administrators = [
       Player.find_by(email: 'jamesdorr3@gmail.com'),
       Player.find_by(email: 'brian@gmail.com')
-    ].include?(Player.find(session[:player_id]))
+    ]
+    if session[:player_id]
+      user = Player.find(session[:player_id])
+      administrators.include?(user)
+    else
+      false
+    end
   end
 
 end
