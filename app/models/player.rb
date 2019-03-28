@@ -5,7 +5,7 @@ class Player < ApplicationRecord
     has_many :entries, through: :teams
     has_many :tournaments, through: :entries
 
-    validates :name, :birth_date, :email, :password_digest, presence: true
+    validates :name, :birth_date, :email, :password, presence: true
 
     def age
       now = Time.now.utc.to_date

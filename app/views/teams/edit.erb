@@ -5,11 +5,10 @@
 <%= form_for @team do |f| %>
 Team Name : <%= f.text_field :name %><br>
 <br>
-<%= f.submit "Submit Edit"%>
 
   <%= f.fields_for :players do |player| %>
     <%= player.collection_select :id, (Player.all), :id, :name %>
-  <% end %> 
+  <% end %>
   <br>
 
 <%= f.submit :class => 'button'%>
@@ -17,3 +16,5 @@ Team Name : <%= f.text_field :name %><br>
 
 <%= button_to "Delete Team", {:controller => :teams,
   :action => 'destroy', :id => @team.id}, {:method => :delete, data: {confirm: "This will delete the team. Are you sure?"}, class: 'button'} %>
+
+<%= render "errors" %>
