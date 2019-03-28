@@ -40,6 +40,7 @@ class PlayersController < ApplicationController
     end
 
     def destroy
+      @player.drafts.destroy_all
       @player.destroy
       session.delete :player_id
       session.delete :name

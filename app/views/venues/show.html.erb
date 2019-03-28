@@ -1,12 +1,14 @@
 <h1> <%= @venue.name %> </h1>
+<%= image_tag "#{@venue.img_url}", width: '50%', class: 'left-img'%>
+<div class="right-txt">
 <h2><%= @venue.location %></h2>
-<%= image_tag "#{@venue.img_url}", width: '500', class: 'right_img'%>
 <h3>Upcoming Tournaments</h3>
 <ul>
   <% @tournaments.each do |tournament| %>
   <li><%= tournament.date.to_formatted_s(:long_ordinal) %> - <%= link_to tournament.name, tournament %></li>
   <% end %>
 </ul>
+</div>
 
 <%= button_to "Edit Venue", {:controller => :venues,
   :action => 'edit', :id => @venue.id},

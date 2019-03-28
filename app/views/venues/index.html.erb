@@ -1,3 +1,5 @@
+<div class="right-txt">
+
 <h1>Venues</h1>
 <ul>
 <% @venues.each do |venue| %>
@@ -7,3 +9,7 @@
 
 <%= button_to "Add Venue", {:controller => :venues,
   :action => 'new',}, {:method => :get, class: 'button'} if admin %>
+
+</div>
+
+<%= image_tag "https://cdn3-www.gamerevolution.com/assets/uploads/2017/10/Super-Mario-Odyssey-Volleyball.jpg", width: '50%', class: 'left-img'%>
