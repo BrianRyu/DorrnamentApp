@@ -150,3 +150,15 @@ input[type="password"], input[name="email"], select {
   left: 21%;
   display: inline-block;
 }
+
+.login {
+  text-align: center;
+}
+
+.login-pic {
+  opacity: 0.3;
+  position: absolute;
+  top: 45px;
+  z-index: -1;
+}
+

@@ -1,15 +1,19 @@
-<h1>Welcome! Please Log In</h1>
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <label for="">Email: </label>
-  <input name=email> <br>
-  <label for="">Password: </label>
-  <input type="password" name="password" value=""> <br>
-  <input type=submit value='Log In' class='button'>
-<% end %>
-  <% if @player %>
-  <ul>
-    <% @player.errors.full_messages.each do |error| %>
-    <li><font color='red'><%= error %></font></li>
-  </ul>
+<div class="login">
+  <h1>Welcome! Please Log In</h1>
+  <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+    <label for="">Email: </label>
+    <input name=email> <br><br>
+    <label for="">Password: </label>
+    <input type="password" name="password" value=""> <br><br>
+    <input type=submit value='login' class='button'>
   <% end %>
-<% end %>
+    <% if @player %>
+    <ul>
+      <% @player.errors.full_messages.each do |error| %>
+      <li><font color='red'><%= error %></font></li>
+    </ul>
+    <% end %>
+  <% end %>
+</div>
+
+<%= image_tag "https://i.kinja-img.com/gawker-media/image/upload/s--5fSOe0hN--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/18he4twayfxh9jpg.jpg", class: 'login-pic' %>

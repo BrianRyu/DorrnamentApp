@@ -1,9 +1,12 @@
 <%= form_for @venue do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name %> <br><br>
+<%= f.text_field :name %> <br>
+<br>
 <%= f.label :location %>
-<%= f.text_field :location %><br><br>
+<%= f.text_field :location %><br>
+<br>
 <%= f.label :image_url %>
-<%= f.text_field :img_url %><br><br>
+<%= f.text_field :img_url %><br>
+<br>
 <%= f.submit :class => 'button'%>
 <% end %>
