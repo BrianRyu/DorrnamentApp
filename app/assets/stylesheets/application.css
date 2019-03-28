@@ -22,6 +22,7 @@ body a:hover {
 
 h1, h2 {
   margin-left: 20px;
+  color: #777
 }
 
 .ribbon {
@@ -42,6 +43,7 @@ th a {
 th a:hover {
   background-image: linear-gradient(#f5f5f5, #dbdbdb);
   color: #333;
+  border-radius: 20px;
 }
 
 .spacer
@@ -74,13 +76,17 @@ html,body {
 }
 
 .button {
-  border-radius: 50%;
+  border-radius: 20px;
   color: #333;
-  background-image: linear-gradient(#efefef, #cfcfcf);
+  background-image: linear-gradient(#f0f0f0, #E5E1DE, #f0f0f0);
   padding: 10px;
-  margin: 0px;
+  margin-bottom: 3px;
   font-size: 12px;
   margin-left: 7%;
+}
+
+.button:hover {
+  background-image: linear-gradient(#f0f0f0, #E5E1DE, #ddd);
 }
 
 .right_img {
