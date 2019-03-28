@@ -9,7 +9,7 @@ class Player < ApplicationRecord
     validates :name, :birth_date, :email, presence: true
 
     def has_http?
-      img_url.match(/\A(https?:\/\/)/) ? true : Player.last.update(img_url: "http://#{img_url}") if img_url
+      img_url.match(/\A(https?:\/\/)/) ? true : Player.last.update(img_url: nil) if img_url
     end
 
 end
