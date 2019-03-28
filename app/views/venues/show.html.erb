@@ -8,8 +8,8 @@
   <li><%= tournament.date.to_formatted_s(:long_ordinal) %> - <%= link_to tournament.name, tournament %></li>
   <% end %>
 </ul>
-</div>
 
 <%= button_to "Edit Venue", {:controller => :venues,
   :action => 'edit', :id => @venue.id},
   {:method => :get, class: 'button'} if admin %>
+</div>

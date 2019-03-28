@@ -38,16 +38,7 @@
 <% when 5 %>
 <%= image_tag "https://www.printyourbrackets.com/fillable-brackets/5-seeded-fillable-single-elimination.png", width: '500', class: "right_img"%>
 <% end %>
-<!-- <label>Team Sign Up / Create: </label>
-<form class="" action="/entries" method="post">
-  <input type="text" list="combo-options" id="combobox">
-  <datalist id="combo-options">
-    <%# (@teams - @tournament.teams).each do |team| %>
-    <option name="<%# team %>"><%# team.name %></option>
-    <%# end %>
-  </datalist>
-  <input type="submit" name="" value="Enter Now!">
-</form> -->
+
 
 <% @entry.errors.full_messages.each do |error| %>
 <%= error %>

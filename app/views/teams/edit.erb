@@ -12,12 +12,12 @@
     <% Player.all.each do |player| %>
     <option value="<%= player.id %>"><%= player.name %></option>
     <% end %>
-  </select>
+  </select><br><br>
   <select name="player2">
     <% Player.all.each do |player| %>
     <option value="<%= player.id %>"><%= player.name %></option>
     <% end %>
-  </select><br>
+  </select><br> <br>
   <input type="submit" name="" value="Edit Team" class="button">
 </form>
 

@@ -7,26 +7,23 @@
 <% end %>
 </ul>
 
-<%= form_for @team do |f| %>
-Team Name : <%= f.text_field :name %><br>
-  <%= f.fields_for :players do |player| %>
-    <%= player.collection_select :id, (Player.all), :id, :name %>
-    <% end %> <br>
-  <%= f.fields_for :players do |player| %>
-    <%= player.collection_select :id, (Player.all), :id, :name %>
-    <% end %> <br>
-<%= f.submit "Create", :class => 'button'%>
-<% end  %>
-
-<%= button_to "Back To All Teams", {:controller => :teams, :action => 'index'}, {:method => :get, class: "button"} %>
-
-
 <form class="" action="/teams" method="post">
-  <%= render 'form' %>
+  <label for="">Name: </label>
+  <input type="text" name="team[name]" value="<%= @team.name %>"> <br><br>
+  <label for="">Players: </label>
+  <select name="player1">
+    <% Player.all.each do |player| %>
+    <option value="<%= player.id %>"><%= player.name %></option>
+    <% end %>
+  </select> <br><br>
+  <select name="player2">
+    <% Player.all.each do |player| %>
+    <option value="<%= player.id %>"><%= player.name %></option>
+    <% end %>
+  </select> <br><br>
   <input type="submit" name="" value="Create Team" class="button">
 </form>
 
 <%= button_to "Back To All Teams", {:controller => :teams, :action => 'index'}, {:method => :get, class: "button"} %>
 
 <%= render "errors" %>
-

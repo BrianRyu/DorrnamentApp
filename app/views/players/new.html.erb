@@ -1,4 +1,4 @@
-<h1> Sign Up </h1>
+<h1> Registration </h1>
 <%= form_for @player do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %><br>
@@ -24,6 +24,6 @@
 <%= f.label :image_url %>
 <%= f.text_field :img_url, placeholder: '(optional)' %><br>
 <br>
-<%= f.submit class: 'button'%>
+<%= f.submit "Register", class: 'button'%>
 <% end %>
 <%= render 'errors' %>

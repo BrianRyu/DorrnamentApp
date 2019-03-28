@@ -64,21 +64,21 @@ footer {
   text-align: center;
   background-image: linear-gradient(#8c8a8a, #777, #8c8a8a, #8c8a8a);
   width: 100%;
-  padding: 15px 0px;
+  padding: 30px 0px;
 }
 
 li {
   list-style: none;
   margin-left: 5%;
 }
-/*
+
 html, body {
     margin: 0;
     padding: 0;
-    background-image: url("https://orig12.deviantart.net/8498/f/2009/056/9/5/conical_light_by_cope57.png");
+    /* background-image: url("https://orig12.deviantart.net/8498/f/2009/056/9/5/conical_light_by_cope57.png"); */
     background-size: 1500px 750px;
     display: inline;
-} */
+}
 
 .button {
   border-radius: 20px;
@@ -101,6 +101,7 @@ html, body {
   right: 7%;
   z-index: -1;
   clear: left;
+  mix-blend-mode: multiply;
 }
 
 .players-table {
@@ -137,15 +138,15 @@ td {
   right: 0;
   top: 10%;
 }
-/*
+
 label {
   position: absolute;
-  left: 7%;
+  left: 9%;
 }
 
 input[type="text"], input[type="date"], input[type="email"],
 input[type="password"], input[name="email"], select {
   position: absolute;
-  left: 14%;
-  display: block;
-} */
+  left: 21%;
+  display: inline-block;
+}
