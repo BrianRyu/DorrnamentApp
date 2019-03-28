@@ -71,14 +71,14 @@ li {
   list-style: none;
   margin-left: 5%;
 }
-
-html,body {
+/*
+html, body {
     margin: 0;
     padding: 0;
     background-image: url("https://orig12.deviantart.net/8498/f/2009/056/9/5/conical_light_by_cope57.png");
     background-size: 1500px 750px;
     display: inline;
-}
+} */
 
 .button {
   border-radius: 20px;
@@ -114,13 +114,38 @@ td {
   width: 200px
 }
 
+.left-img {
+  position: absolute;
+  left: 5%;
+  top: 120px;
+}
+
+.right-txt {
+  position: absolute;
+  left: 55%;
+  width: 45%;
+}
+
+.bottom-right-img {
+  position: absolute;
+  right: 0;
+  bottom: 45px;
+}
+
+.bottom-right-thumb {
+  position: absolute;
+  right: 0;
+  top: 10%;
+}
+/*
 label {
   position: absolute;
   left: 7%;
 }
 
 input[type="text"], input[type="date"], input[type="email"],
-input[type="password"], input[name="email"] {
+input[type="password"], input[name="email"], select {
   position: absolute;
   left: 14%;
-}
+  display: block;
+} */
