@@ -1,8 +1,10 @@
-<p>Teams: <%= Team.all.count %></p>
-<p>Tournaments: <%= Tournament.all.count %></p>
-<p>Venues: <%= Venue.all.count %></p>
-<p>Average Age: <%= Player.average(:birth_date) %></p>
-<p>Players: <%= Player.all.count %></p>
-<% Player.all.each do |p| %>
-  <p><%= p.name %> is <%= DateTime.now.year - p.birth_date.year %> years old</p>
-<% end %>
+<h1>Analytics</h1>
+<p>Number of Teams: </p>
+<p>Number of Players: </p>
+<p>Number of Tournaments: </p>
+<p>Number of Venues: </p>
+<p>Average Age: </p>
+<p>Average Time Playing: </p>
+<p>Most Popular Tournament: </p>
+<p>Most Popular Venue: </p>
+<p>Most Prolific Team: </p>

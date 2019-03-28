@@ -1,6 +1,6 @@
 <h1> <%= @venue.name %> </h1>
 <h2><%= @venue.location %></h2>
-<%= image_tag "#{@venue.img_url}", width: '500' %>
+<%= image_tag "#{@venue.img_url}", width: '500', class: 'right_img'%>
 <h3>Upcoming Tournaments</h3>
 <ul>
   <% @tournaments.each do |tournament| %>

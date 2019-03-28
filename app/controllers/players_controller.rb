@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
     before_action :authorized?, except: [:new, :create, :index, :show]
 
     def index
-        @players = Player.all
+        @players = Player.all.sort_by(&:name)
     end
 
     def show
@@ -49,6 +49,8 @@ class PlayersController < ApplicationController
     private
 
     def player_params
-        params.require(:player).permit(:name, :birth_date, :gender, :start_date, :email, :password, :password_confirmation)
+        params.require(:player).permit(:name, :birth_date,
+          :gender, :start_date, :email, :password,
+          :password_confirmation, :img_url)
     end
 end
