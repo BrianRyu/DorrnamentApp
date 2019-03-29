@@ -4,9 +4,10 @@
 <h2>Players:</h2>
 <ul>
     <% @team.players.each do |player| %>
-        <li> <%= link_to player.name, player_path(player.id) %> </li> <br>
+        <li class="team-player"> <%= link_to player.name, player_path(player.id) %>
+        <br> <%= link_to (image_tag player.img_url, height:"300px"), player %></li>
     <% end %>
 </ul>
 
 <%= button_to "Edit Team", {:controller => :teams,
-  :action => 'edit', :id => @team.id}, {:method => :get, class: "button"} if admin or on_team%>
+  :action => 'edit', :id => @team.id}, {:method => :get, class: "button clear-left"} if admin or on_team%>

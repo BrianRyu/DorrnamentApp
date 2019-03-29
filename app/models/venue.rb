@@ -6,4 +6,8 @@ class Venue < ApplicationRecord
     def has_http?
       img_url.match(/\A(https?:\/\/)/) ? true : Venue.last.update(img_url: nil) if img_url
     end
+
+    def self.all_alphabetical
+      Venue.all.sort_by(&:name)
+    end
 end

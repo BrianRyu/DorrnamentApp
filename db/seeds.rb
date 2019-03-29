@@ -44,11 +44,11 @@ Draft.create!(team: toadshi, player: yoshi)
 Draft.create!(team: bolina, player: bowser)
 Draft.create!(team: bolina, player: rosalina)
 
-bowsers_castle = Venue.create!(name: "Bowser's Castle", location: "Bowser's Castle", img_url: "https://images.ecosia.org/wpa_uMWnDP5uqT4C_PEblcnv7So=/0x390/smart/http%3A%2F%2Fstatic.giantbomb.com%2Fuploads%2Foriginal%2F8%2F83448%2F2113776-bowser_s_castle__mario_kart_7_.png")
+bowsers_castle = Venue.create!(name: "Bowser's Castle", location: "Hell", img_url: "https://images.ecosia.org/wpa_uMWnDP5uqT4C_PEblcnv7So=/0x390/smart/http%3A%2F%2Fstatic.giantbomb.com%2Fuploads%2Foriginal%2F8%2F83448%2F2113776-bowser_s_castle__mario_kart_7_.png")
 rainbow_road = Venue.create!(name: "Rainbow Road", location: "Space", img_url: "https://images.ecosia.org/XRJTodSxJhQAtCVaqmfMYAjp97c=/0x390/smart/http%3A%2F%2Fi1.ytimg.com%2Fvi%2F1umKGrEW_U8%2Fmaxresdefault.jpg")
 beach = Venue.create!(name: "Koopa Troopa Beach", location: "An Island Somewhere", img_url: "https://images.ecosia.org/NZE_J78QzkplzcWx2yXZq5aCKJs=/0x390/smart/http%3A%2F%2Fwww.rantlifestyle.com%2Fwp-content%2Fuploads%2F2014%2F01%2FKoopaTroopaBeachMK7.png")
 donut = Venue.create!(name: "Donut Plains", location: "Kansas", img_url: "https://images.ecosia.org/oST8mzqiVAFLWlEP6tj2z0y_1q4=/0x390/smart/https%3A%2F%2Fi.ytimg.com%2Fvi%2FYCkqBStTcZ0%2Fmaxresdefault.jpg")
-jungle = Venue.create!(name: "DK Jungle Parkway", location: "Donkey Kong Island", img_url: "https://images.ecosia.org/hxB65WO20ZpL4AL6dt71XER16f0=/0x390/smart/http%3A%2F%2Fvignette4.wikia.nocookie.net%2Fmariokart%2Fimages%2Fb%2Fb0%2FDK%2527s_jungle_parkway_.png%2Frevision%2Flatest%3Fcb%3D20130823235602")
+jungle = Venue.create!(name: "DK Jungle Parkway", location: "91 Prospect, Brooklyn, NY", img_url: "https://images.ecosia.org/hxB65WO20ZpL4AL6dt71XER16f0=/0x390/smart/http%3A%2F%2Fvignette4.wikia.nocookie.net%2Fmariokart%2Fimages%2Fb%2Fb0%2FDK%2527s_jungle_parkway_.png%2Frevision%2Flatest%3Fcb%3D20130823235602")
 
 
 special = Tournament.create!(name: "Special Cup", date: "2019-6-25", venue: bowsers_castle)
