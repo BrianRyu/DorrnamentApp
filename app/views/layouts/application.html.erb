@@ -24,15 +24,17 @@
       </tr>
     </table>
   </head>
+  
 
   <body>
     <div class="spacer"></div>
     <%= yield %>
     <div class="spacer"></div>
   </body>
+    <%= image_tag "DORRYU.png", class: 'dorryu' %>
   <footer>
     <div class="third"><%= link_to "Contact", "https://media.giphy.com/media/CJbUvNftlDbcQ/giphy.gif", target: :_blank %></div>
-    <div class="third"> DorRyu Productions ©</div>
+    <div class="third">    dorryu     </div>
     <div class="third"> by <%= link_to "Brian Ryu", "https://github.com/brianryu", target: :_blank  %> & <%= link_to "James Dorr", "https://github.com/jamesdorr3", target: :_blank  %> ©</div>
   </footer>
 </html>
