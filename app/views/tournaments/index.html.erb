@@ -1,7 +1,7 @@
 <h1>Tournaments</h1>
 <ul>
 <% @tournaments.each do |tournament| %>
-<li><%= tournament.date.to_formatted_s(:long_ordinal) %> - <%= link_to tournament.name, tournament %> at <%= link_to tournament.venue.name, tournament.venue %></li><br>
+<li><%= tournament.pretty_date %> - <%= link_to tournament.name, tournament %> at <%= link_to tournament.venue.name, tournament.venue %></li><br>
 <% end %>
 </ul>
 
