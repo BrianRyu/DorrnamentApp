@@ -7,4 +7,8 @@ class Tournament < ApplicationRecord
 
     validates :name, :date, presence: true
 
+    def pretty_date
+      self.date.to_formatted_s(:long_ordinal)
+    end
+
 end
