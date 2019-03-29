@@ -3,10 +3,18 @@ body {
   background-color: white;
   font-family: "Lato", sans-serif;
   font-weight: 100;
+  margin-bottom: 100px;
 }
 
 p, h1, h2, h3 {
   margin-left: 7%;
+}
+p {
+  font-size: 20px
+}
+
+h1 {
+  font-size: 3em;
 }
 
 
@@ -31,6 +39,8 @@ h1, h2 {
   width: 100%;
   position: fixed;
   top: 0;
+  font-size: 1.5em;
+  z-index: 1
 }
 th a {
   color: white;
@@ -50,11 +60,22 @@ th a:active {
   background-color: #fff;
 }
 
-.spacer
+.top-spacer
 {
     width: 100%;
-    height: 50px;
+    height: 60px;
 }
+.bottom-spacer
+{
+    width: 100%;
+    position: absolute;
+    height: 60px;
+}
+
+/* body {
+  position: absolute
+} */
+
 
 footer {
   display: block;
@@ -64,7 +85,8 @@ footer {
   text-align: center;
   background-image: linear-gradient(#8c8a8a, #777, #8c8a8a, #8c8a8a);
   width: 100%;
-  padding: 15px 0px;
+  padding: 20px 0px;
+  z-index: 1;
 }
 
 .third {
@@ -79,6 +101,7 @@ footer {
 li {
   list-style: none;
   margin-left: 5%;
+  font-size: 20px;
 }
 
 html, body {
@@ -96,7 +119,7 @@ html, body {
   padding: 10px;
   margin-bottom: 3px;
   margin-top: 3px;
-  font-size: 12px;
+  font-size: 15px;
   margin-left: 7%;
 }
 
@@ -127,7 +150,7 @@ td {
 .left-img {
   position: absolute;
   left: 5%;
-  top: 120px;
+  top: 175px;
 }
 
 .right-txt {
@@ -150,14 +173,17 @@ td {
 
 label {
   position: absolute;
-  left: 9%;
+  left: 8%;
+  font-size: 20px;
 }
 
 input[type="text"], input[type="date"], input[type="email"],
 input[type="password"], input[name="email"], select {
-  position: absolute;
-  left: 21%;
+  position: relative;
+  left: 18%;
   display: inline-block;
+  font-size: 15px;
+  margin: 0px;
 }
 
 .login {
@@ -166,6 +192,10 @@ input[type="password"], input[name="email"], select {
   width: 50%;
 }
 
+.login input {
+  position: absolute;
+  left: 23%;
+}
 /* .login input[type="text"], input[type="date"], input[type="email"],
 input[type="password"], input[name="email"], select {
   position: absolute;
@@ -177,4 +207,23 @@ input[type="password"], input[name="email"], select {
   position: absolute;
   top: 45px;
   z-index: -1;
+}
+
+.players-index {
+  background-color: white;
+  position: absolute;
+  left: 7%;
+  padding-bottom: 60px;
+}
+
+.player {
+  width: 33%;
+  float: left;
+  margin: 20px 0;
+  font-size: 25px;
+}
+
+.player[class="player-font"] {
+  position: relative;
+  bottom: 10px;
 }

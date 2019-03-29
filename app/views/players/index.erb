@@ -1,10 +1,8 @@
 <h1> All Players </h1>
 
-<table class="players-table">
-  <% @players.each_slice(2) do |players| %>
-    <tr><% players.each do |player| %>
-      <td> <%= image_tag "#{player.img_url}", height: '30' %> <%= link_to player.name, player %> </td><br>
-    <% end %>
-  </tr>
-  <% end %>
-</table>
+<div class="players-index">
+<% @players.each do |player| %>
+  <div class="player"><%= image_tag "#{player.img_url}", height: '50' %> <span class="player-font"><%= link_to player.name, player %></span></div>
+<% end %>
+
+</div>

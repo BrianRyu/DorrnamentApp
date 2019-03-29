@@ -22,8 +22,8 @@ princess_daisy = Player.create!(name: 'Princess Daisy', gender: 'female', birth_
 rosalina = Player.create!(name: 'Rosalina', gender: 'female', birth_date: "0000-01-01", start_date: "2000-9-13", email: '8@8', password: 'pw', img_url: 'http://i3.kym-cdn.com/photos/images/facebook/001/167/189/282.jpg')
 donkey_kong = Player.create!(name: 'Donkey Kong', gender: 'male', birth_date: "1982-10-13", start_date: "2005-9-13", email: '9@9', password: 'pw', img_url: 'http://files.gamebanana.com/img/ico/sprays/54f2862be0933.png')
 diddy_kong = Player.create!(name: 'Diddy Kong', gender: 'male', birth_date: "1983-9-13", start_date: "2003-9-13", email: '10@10', password: 'pw', img_url: 'http://rs103.pbsrc.com/albums/m136/MER255/Donkey%20Kong/Diddy-Kong_zps77f7f7e1.gif~c200')
-brian = Player.create!(name: 'Brian Ryu', gender: 'male', birth_date: "1993-07-02", start_date: "2003-9-13", email: 'brian@gmail.com', password: '1', img_url: 'https://pbs.twimg.com/profile_images/24679042/317x317_soulja_boy_400x400.jpg')
-james = Player.create!(name: 'James Dorr', gender: 'male', birth_date: "1991-03-24", start_date: "1999-9-1", email: 'jamesdorr3@gmail.com', password: '1')
+brian = Player.create!(name: 'Brian Ryu', gender: 'male', birth_date: "1993-07-02", start_date: "2003-9-13", email: 'brian@gmail.com', password: '1', img_url: 'https://vignette.wikia.nocookie.net/streetfighter/images/4/46/Ryurender.png/revision/latest?cb=20170728171704')
+james = Player.create!(name: 'James Dorr', gender: 'male', birth_date: "1991-03-24", start_date: "1999-9-1", email: 'jamesdorr3@gmail.com', password: '1', img_url: 'https://scontent-lga3-1.cdninstagram.com/vp/cc14d57d40b43d051f97c4af298afbef/5D46F6D8/t51.2885-15/sh0.08/e35/s640x640/16230873_954153831350857_259230503566049280_n.jpg?_nc_ht=scontent-lga3-1.cdninstagram.com')
 
 brobro = Team.create!(name: "BroBro")
 princesses = Team.create!(name: "Princesses")
