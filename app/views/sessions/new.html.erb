@@ -1,8 +1,8 @@
 <div class="login">
-  <h1>Welcome! Please Log In</h1>
+  <h1>Welcome!<br>Please Log In</h1>
   <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
     <label for="">Email: </label>
-    <input name=email> <br><br>
+    <input name="email"> <br><br><br>
     <label for="">Password: </label>
     <input type="password" name="password" value=""> <br><br>
     <input type=submit value='login' class='button'>

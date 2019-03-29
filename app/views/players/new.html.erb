@@ -2,28 +2,28 @@
     <h1> Registration </h1>
     <%= form_for @player do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %><br>
+    <%= f.text_field :name %><br><br>
     <br>
     <%= f.label :birth_date %>
-    <%= f.date_field :birth_date %><br>
+    <%= f.date_field :birth_date %><br><br>
     <br>
     <%= f.label :email %>
-    <%= f.email_field :email %><br>
+    <%= f.email_field :email %><br><br>
     <br>
     <%= f.label :password %>
-    <%= f.password_field :password %><br>
+    <%= f.password_field :password %><br><br>
     <br>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password_confirmation, placeholder: "(confirmation)" %><br><br>
     <br>
     <%= f.label :gender %>
-    <%= f.text_field :gender, placeholder: '(optional)'%><br>
+    <%= f.text_field :gender, placeholder: '(optional)'%><br><br>
     <br>
     <%= f.label :start_date %>
-    <%= f.date_field :start_date, placeholder: '(optional)' %><br>
+    <%= f.date_field :start_date, placeholder: '(optional)' %><br><br>
     <br>
     <%= f.label :image_url %>
-    <%= f.text_field :img_url, placeholder: '(optional)' %><br>
+    <%= f.text_field :img_url, placeholder: '(optional)' %><br><br>
     <br>
     <%= f.submit class: 'button'%>
     <% end %>

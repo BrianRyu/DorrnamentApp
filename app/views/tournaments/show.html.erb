@@ -19,24 +19,15 @@
 
 <%= form_for @entry do |f| %>
 <%= f.label :team %>
-<%= f.collection_select :team_id, (Team.all - @tournament.teams), :id, :name %>
+<%= f.collection_select :team_id, (Team.all - @tournament.teams), :id, :name, class: 'left-button' %> <br>
 <%= hidden_field_tag 'entry[tournament_id]', "#{params[:id]}" %> <br>
 <%= f.submit :class => 'button'%>
 <% end %>
 
-<% case @tournament.teams.count %>
-<% when 0 %>
-<%= image_tag "http://images4.fanpop.com/image/photos/16200000/Volleyball-mario-sports-mix-wii-16287296-389-480.jpg", width: '500', class: "right_img"%>
-<% when 1 %>
-<%= image_tag "http://images4.fanpop.com/image/photos/16200000/Volleyball-mario-sports-mix-wii-16287296-389-480.jpg", width: '500', class: "right_img"%>
-<% when 2 %>
-<%= image_tag "http://images4.fanpop.com/image/photos/16200000/Volleyball-mario-sports-mix-wii-16287296-389-480.jpg", width: '500', class: "right_img"%>
-<% when 3 %>
-<%= image_tag "http://www.printyourbrackets.com/fillable-brackets/3-seeded-fillable-single-elimination.png", width: '500', class: "right_img"%>
-<% when 4 %>
-<%= image_tag "http://www.printyourbrackets.com/fillable-brackets/4-single-fillable-bracket.png", width: '500', class: "right_img"%>
-<% when 5 %>
-<%= image_tag "https://www.printyourbrackets.com/fillable-brackets/5-seeded-fillable-single-elimination.png", width: '500', class: "right_img"%>
+<% if @tournament.teams.count <= 2 %>
+  <%= image_tag "http://images4.fanpop.com/image/photos/16200000/Volleyball-mario-sports-mix-wii-16287296-389-480.jpg", width: '500', class: "right_img"%>
+<% else %>
+  <%= image_tag "http://www.printyourbrackets.com/fillable-brackets/#{@tournament.teams.count}-seeded-fillable-single-elimination.png", width: '500', class: "right_img"%>
 <% end %>
 
 
