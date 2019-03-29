@@ -27,6 +27,7 @@ class PlayersController < ApplicationController
     end
 
     def edit
+      @player = Player.find(params[:id])
     end
 
     def update
@@ -45,10 +46,6 @@ class PlayersController < ApplicationController
       session.delete :player_id
       session.delete :name
       redirect_to login_path
-    end
-
-    def edit
-
     end
 
     # private

@@ -8,4 +8,11 @@
 <%= image_tag "#{@player.img_url}", width: '500', class: 'right_img' %>
 
 <%= button_to "Edit Information", {:controller => :players,
-  :action => 'edit', :id => @player.id}, {:method => :get, class: 'button'} if admin or is_self %>
+  :action => 'edit'}, {:method => :get, class: 'button'} if admin or is_self %>
+
+<h3>Teams</h3>
+<ul>
+  <% @player.teams.uniq.each do |team| %>
+  <li><%= link_to team.name, team %></li>
+  <% end %>
+</ul>
