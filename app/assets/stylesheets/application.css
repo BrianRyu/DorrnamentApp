@@ -227,3 +227,12 @@ input[type="password"], input[name="email"], select {
   position: relative;
   bottom: 10px;
 }
+
+.dorryu {
+  position: fixed;
+    bottom: -45px; 
+    z-index: 2;
+    left: 45%;
+    width: 10%;
+}
+
