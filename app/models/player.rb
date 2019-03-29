@@ -30,4 +30,8 @@ class Player < ApplicationRecord
       self.start_date.to_formatted_s(:long_ordinal)
     end
 
+    def self.with_most_teams
+      Player.all.max_by {|player| player.drafts.count}
+    end
+
 end

@@ -9,4 +9,17 @@ class Team < ApplicationRecord
 
     validates :name, presence: true
 
+    def players_chronological
+      drafts_chrono = self.drafts.sort_by {|e| e.created_at}
+      drafts_chrono.map(&:player)
+    end
+
+    def players_alphabetical
+      self.players.sort_by(&:name)
+    end
+
+    def self.all_alphabetical
+      Team.all.sort_by(&:name)
+    end
+
 end

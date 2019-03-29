@@ -3,7 +3,7 @@
 <h2><%= link_to @tournament.venue.name, @tournament.venue %></h2>
 
 <h3>Current Teams</h3>
-<ul>
+<ol>
   <% @tournament.teams.each do |team| %>
   <li><%= team.name %></li>
   <ul>
@@ -15,11 +15,11 @@
     data: {confirm: "This will delete the team from the tournament. Are you sure?"}, class: 'button'} if admin %>
   </ul>
   <% end %>
-</ul>
+</ol>
 
 <%= form_for @entry do |f| %>
 <%= f.label :team %>
-<%= f.collection_select :team_id, (Team.all - @tournament.teams), :id, :name, class: 'left-button' %> <br>
+<%= f.collection_select :team_id, (Team.all_alphabetical - @tournament.teams), :id, :name, class: 'left-button' %> <br>
 <%= hidden_field_tag 'entry[tournament_id]', "#{params[:id]}" %> <br>
 <%= f.submit :class => 'button'%>
 <% end %>
