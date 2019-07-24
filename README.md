@@ -2,6 +2,9 @@
 
 Mario themed volleyball tournament registration application where users sign up for teams to play in multiple tournaments throughout the season. 
 
+# TO START APPLICATION
+run: $rails s
+
 # Models
 
     * Players
