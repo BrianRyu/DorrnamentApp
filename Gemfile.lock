@@ -205,11 +205,20 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
 <<<<<<< HEAD
+<<<<<<< HEAD
   pg
   puma (~> 3.11)
 =======
   puma (~> 3.12)
 >>>>>>> aa7962d0e588ab7e23244b7c39eea63909ab4b2a
+=======
+
+  pg
+
+
+  puma (~> 3.12)
+
+>>>>>>> 07268ffcf50b066890dbf02049688c410ea54e9d
   rails (~> 5.2.2, >= 5.2.2.1)
   sass-rails (~> 5.0)
   selenium-webdriver
