@@ -1,6 +1,11 @@
-# README
+![View of Dorrnament App](https://i.ibb.co/V23hnzH/Screen-Shot-2019-08-13-at-9-03-25-PM.png)
 
-* Associated Volleyball Professionals
+# DorrnamentApp
+
+Mario themed volleyball tournament registration application where users sign up for teams to play in multiple tournaments throughout the season. 
+
+# TO START APPLICATION
+run: $rails s
 
 # Models
 
