@@ -41,11 +41,17 @@ class PlayersController < ApplicationController
     end
 
     def destroy
+      @player = Player.find(params[:id])
       @player.drafts.destroy_all
       @player.destroy
-      session.delete :player_id
-      session.delete :name
-      redirect_to login_path
+      ######## IF IT'S ME! ############################
+      if @player == Player.find(session[:player_id])
+        redirect_to players_path
+      else
+        session.delete :player_id
+        session.delete :name
+        redirect_to login_path
+      end
     end
 
     # private
